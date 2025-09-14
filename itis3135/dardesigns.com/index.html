@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dar Designs — dardesigns.com</title>
+
+  <!--
+    Color scheme generated with Coolors:
+    https://coolors.co/ffac81-ff928b-fec3a6-efe9ae-cdeac0
+    (Use these palette hex codes in the embedded stylesheet)
+  -->
+
+  <style>
+    /* Palette variables */
+    :root{
+      --peach-1: #FFAC81;
+      --peach-2: #FF928B;
+      --peach-3: #FEC3A6;
+      --cream:   #EFE9AE;
+      --mint:    #CDEAC0;
+      --text:    #2b2b2b;
+      --muted:   #6b6b6b;
+      --white:   #ffffff;
+    }
+
+    /* Page reset & base */
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color:var(--text);
+      background: linear-gradient(180deg, var(--white) 0%, var(--mint) 100%);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Layout using semantic elements (no extraneous wrappers) */
+    header{
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      padding:1.25rem 1.5rem;
+      background: linear-gradient(90deg, rgba(255,172,129,0.14), rgba(255,146,139,0.10));
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    header h1{
+      margin:0;
+      font-size:1.35rem;
+      letter-spacing:0.4px;
+      display:flex;
+      align-items:center;
+      gap:0.5rem;
+    }
+
+    header img{
+      /* Image resized for presentation (see comment above element for source) */
+      width:160px;
+      height:83px;
+      object-fit:contain;
+      display:block;
+      border-radius:8px;
+      box-shadow: 0 6px 18px rgba(43,43,43,0.06);
+      background: var(--white);
+      padding:6px;
+    }
+
+    header .tagline{
+      font-size:0.9rem;
+      color:var(--muted);
+      margin-left:0.25rem;
+    }
+
+    main{
+      max-width:900px;
+      margin:2rem auto;
+      padding:1.5rem;
+      background: rgba(255,255,255,0.9);
+      border-radius:12px;
+      box-shadow: 0 10px 30px rgba(43,43,43,0.06);
+    }
+
+    /* Page title inside main */
+    main h2{
+      margin-top:0;
+      color: var(--peach-2);
+      font-size:1.5rem;
+    }
+
+    main p{
+      line-height:1.6;
+      color:var(--text);
+      margin:0.6rem 0 1rem 0;
+    }
+
+    /* Non-standard list bullets using ::marker replacement via list-style disabled */
+    ul{
+      padding-left:0;
+      margin:0.5rem 0 1rem 0;
+      list-style:none;
+      display:grid;
+      gap:0.45rem;
+    }
+
+    ul li{
+      padding:0.55rem 0.75rem;
+      border-radius:8px;
+      background: linear-gradient(90deg, rgba(254,195,166,0.25), rgba(205,234,192,0.12));
+      font-weight:600;
+      display:flex;
+      align-items:center;
+      gap:0.6rem;
+    }
+
+    /* custom bullet icon */
+    ul li::before{
+      content:"✦";
+      font-size:0.95rem;
+      color:var(--peach-1);
+      display:inline-block;
+      width:1.1rem;
+      margin-left:-0.3rem;
+    }
+
+    /* Contact block using semantic address */
+    address{
+      display:block;
+      margin-top:1.25rem;
+      padding:1rem;
+      border-left:4px solid var(--peach-3);
+      background: rgba(239,233,174,0.25);
+      border-radius:8px;
+      font-style:normal;
+      line-height:1.5;
+    }
+
+    address a{
+      color:var(--peach-2);
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    /* Footer */
+    footer{
+      margin:2rem 0 3rem 0;
+      text-align:center;
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
+    footer .slogan{
+      color:var(--peach-2);
+      font-weight:700;
+      display:block;
+      margin-bottom:0.35rem;
+    }
+
+    /* Simple responsive tweaks */
+    @media (max-width:640px){
+      header{ padding:0.9rem; gap:0.6rem; }
+      header img{ width:110px; height:57px; }
+      main{ margin:1rem; padding:1rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!--
+      Logo: jaguar-openclipart-org.jpg (original source: openclipart.org) — public domain / CC0.
+      I resized the original to 160×83 for display; include the same width/height attributes (above).
+      If you prefer a different sigil, replace the src with your chosen file at the same dimensions.
+    -->
+    <img src="images/jaguar-openclipart-org.jpg" alt="Dar Designs sigil — stylized J" width="160" height="83" />
+    <h1>Dar Designs
+      <span class="tagline">Elegant digital & brand experiences</span>
+    </h1>
+  </header>
+
+  <main>
+    <h2>Dar Designs' services</h2>
+
+    <p>
+      Dar Designs is a small studio focused on clean, accessible digital products and brand systems.
+      We combine thoughtful visual design with practical front-end engineering to craft websites
+      and simple web applications that work for people and businesses.
+    </p>
+
+    <ul>
+      <li>Human-centered branding that tells your story simply</li>
+      <li>Responsive website builds — performance & accessibility first</li>
+      <li>Fast prototypes to test ideas before you invest</li>
+      <li>Design systems that scale with your product</li>
+      <li>UX audits with clear, prioritized recommendations</li>
+      <li>Small-app UX/UI design for startups and local businesses</li>
+      <li>Content strategy & copy direction for clarity and conversion</li>
+    </ul>
+
+    <p>
+      For every client we aim to reduce complexity: remove noise, highlight value, and deliver measurable improvements.
+      We prototype quickly, collaborate closely, and hand over polished assets with documentation so your team can move forward confidently.
+    </p>
+
+    <address>
+      <strong>Contact Dar Designs</strong><br />
+      Email: <a href="mailto:hello@dardesigns.co">hello@dardesigns.co</a><br />
+      Phone: (704) 555-0183<br />
+      Studio: 412 East Mockingbird Lane, Charlotte, NC 28202
+    </address>
+
+    <p style="margin-top:1rem;color:var(--muted);font-size:0.95rem;">
+      Interested in a simple audit or a short discovery call? Send us a note — we'll reply within 2 business days.
+    </p>
+  </main>
+
+  <footer>
+    <span class="slogan">"Design that feels like home."</span>
+    <small>&copy; 2025 Dar Designs — dardesigns.co</small>
+  </footer>
+</body>
+</html>
