@@ -19,6 +19,7 @@ h1 {
 }
 nav a + a::before {
   content: "| |";
+  text-align: center;
   margin: 0 8px;
   color: white;
 }
