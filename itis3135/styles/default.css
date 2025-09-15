@@ -12,6 +12,31 @@ header {
   padding: 1rem;
   text-align: center;
 }
+/* Header Navigation */
+header nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px; /* space between links and dividers */
+}
+
+header nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Add dividers */
+header nav a::after {
+  content: "|";
+  margin-left: 12px;
+  color: white;
+}
+
+/* Remove divider after last link */
+header nav a:last-child::after {
+  content: "";
+}
 
 h1 {
   margin: 0;
