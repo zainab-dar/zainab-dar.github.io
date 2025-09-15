@@ -23,6 +23,9 @@ nav a + a::before {
   margin: 0 8px;
   color: white;
 }
+nav a{
+  text-align: center;
+}
 /* Main Content */
 main {
   padding: 2rem;

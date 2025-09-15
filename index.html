@@ -66,24 +66,26 @@
 		background-color: #cfa5a0;  /* your muted pink */
 		padding: 15px 0;
 	}
+  .footer-nav nav {
+    display: flex;
+    justify-content: center; /* centers all links */
+    align-items: center;
+    gap: 0; /* no extra space, separator handles spacing */
+}
 
-	.footer-nav {
-		display: flex;
-		justify-content: center; /* centers everything horizontally */
-		align-items: center;     /* vertically centers */
-		gap: 10px;               /* spacing between items */
-	}
+  .footer-nav a {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 8px; /* space around links */
+  }
 
-	.footer-nav a {
-		text-decoration: none;
-		color: white;
-		font-weight: bold;
-	}
-	.footer-nav span {
-		text-decoration: none;
-		color: white;
-		font-weight: bold;
-	}
+  .footer-nav a + a::before {
+    content: "||"; /* adds separator only before links after the first */
+    color: white;
+    margin-right: 8px; /* space after separator */
+  }
+
 
     </style>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
@@ -114,7 +116,7 @@
 	<div class = "footer-nav">
     <nav>
     <a href="https://github.com/zainab-dar">Github.com </a>
-      	
+    
 		<a href="https://webpages.charlotte.edu/zdar1/">CLT Web</a>
 		
 		<a href="https://zainab-dar.github.io">Github.io</a>
