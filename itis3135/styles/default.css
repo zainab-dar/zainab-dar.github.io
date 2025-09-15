@@ -58,6 +58,9 @@ h2 {
   font-style: italic;  /* italic ONLY for tagline */
   color: beige;
 }
+.italic-text{
+  font-style: italic;
+}
 
 /* Links */
 a {
