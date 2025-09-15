@@ -17,22 +17,11 @@ h1 {
   margin: 0;
   font-size: 2rem;
 }
-nav a + a::before {
-  content: "| |";
-  text-align: center;
-  margin: 0 8px;
-  color: white;
-}
-nav a{
-  text-align: center;
-}
+
 /* Main Content */
 main {
   padding: 2rem;
   background-color: #fdfcfb; 
-}
-.italic-text {
-  font-style: italic;
 }
 
 h2 {
@@ -77,15 +66,40 @@ footer {
   margin-top: 2rem;
 }
 
-footer nav a {
-  color: #f4f4f4;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
 footer nav a:hover {
   text-decoration: underline;
 }
+
+.footer-nav nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  position: relative;
+  padding: 0 12px; /* space so the text is centered between | */
+}
+
+.footer-nav a::before,
+.footer-nav a::after {
+  content: "|";
+  color: white;
+  position: absolute;
+}
+
+.footer-nav a::before {
+  left: 0;
+}
+
+.footer-nav a::after {
+  right: 0;
+}
+
 
 /* Validation Buttons */
 .validation-buttons {
