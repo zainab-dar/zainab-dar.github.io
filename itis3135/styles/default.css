@@ -72,6 +72,10 @@ footer {
   align-items: center;
   flex-wrap: wrap; 
 }
+footer p {
+  margin-top: 1rem;
+  display: block;
+}
 
 .footer-nav a {
   color: white;
