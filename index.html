@@ -68,24 +68,34 @@
 	}
   .footer-nav nav {
     display: flex;
-    justify-content: center; /* centers all links */
+    justify-content: center;
     align-items: center;
-    gap: 0; /* no extra space, separator handles spacing */
-}
+    gap: 15px; /* space between items */
+  }
 
   .footer-nav a {
     color: white;
     font-weight: bold;
     text-decoration: none;
-    padding: 0 8px; /* space around links */
+    position: relative;
+    padding: 0 15px; /* space for the || */
   }
 
-  .footer-nav a + a::before {
-    content: "||"; /* adds separator only before links after the first */
+  /* Add || on left and right of every link */
+  .footer-nav a::before,
+  .footer-nav a::after {
+    content: "|";
     color: white;
-    margin-right: 8px; /* space after separator */
+    position: absolute;
   }
 
+  .footer-nav a::before {
+    left: 0;
+  }
+
+  .footer-nav a::after {
+    right: 0;
+  }
 
     </style>
     <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
