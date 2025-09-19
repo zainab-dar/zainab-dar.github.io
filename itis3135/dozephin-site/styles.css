@@ -57,3 +57,39 @@ footer {
   margin-top: 2rem;
   border-top: 3px solid #78b2ae;
 }
+
+.footer-nav nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; 
+}
+footer p {
+  margin-top: 1rem;
+  display: block;
+}
+
+.footer-nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 12px; 
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+  position: relative;
+}
+
+.footer-nav a::before,
+.footer-nav a::after {
+  content: "|";
+  color: white;
+}
+
+.footer-nav a:first-child::before {
+  content: "|";
+}
+
+.footer-nav a:last-child::after {
+  content: "|";
+}
