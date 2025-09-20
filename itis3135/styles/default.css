@@ -33,11 +33,6 @@ header nav a::after {
   color: white;
 }
 
-/* Remove divider after last link */
-header nav a:last-child::after {
-  content: "";
-}
-
 h1 {
   margin: 0;
   font-size: 2rem;
@@ -120,14 +115,6 @@ footer p {
 .footer-nav a::after {
   content: "|";
   color: white;
-}
-
-.footer-nav a:first-child::before {
-  content: "";
-}
-
-.footer-nav a:last-child::after {
-  content: "";
 }
 
 /* Validation Buttons */
