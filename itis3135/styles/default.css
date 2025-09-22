@@ -27,9 +27,9 @@ header nav a {
 }
 
 /* Add dividers */
-header nav a::after {
+.header-nav a::before,
+.header-nav a::after {
   content: "|";
-  margin-left: 12px;
   color: white;
 }
 
