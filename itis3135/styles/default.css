@@ -38,7 +38,6 @@ header nav a:not(:last-child)::after {
 /* Main Content */
 main {
   margin: 2rem auto;
-  padding: 2rem;
   background-color: #fdfcfb;
   border-radius: 20px; /* rounded card */
   width: 70%;
