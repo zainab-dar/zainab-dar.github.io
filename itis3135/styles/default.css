@@ -95,35 +95,20 @@ footer {
   padding: 2rem;
   margin-top: 2rem;
 }
+.footer-nav a::before,
+  .footer-nav a::after {
+    content: "|";
+    color: white;
+    position: absolute;
+  }
 
-.footer-nav nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
+  .footer-nav a::before {
+    left: 0;
+  }
 
-.footer-nav a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0 12px;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-/* Add dividers in footer */
-.footer-nav a:not(:last-child)::after {
-  content: "|";
-  color: white;
-  margin-left: 12px;
-}
-
-footer p {
-  margin-top: 1rem;
-  display: block;
-}
+  .footer-nav a::after {
+    right: 0;
+  }
 
 /* Validation Buttons */
 .validation-buttons {
