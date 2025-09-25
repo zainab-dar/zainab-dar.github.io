@@ -10,7 +10,6 @@ footer {
 .footer-nav nav {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .footer-nav a {
