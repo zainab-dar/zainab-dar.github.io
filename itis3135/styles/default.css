@@ -38,9 +38,9 @@ header nav a:not(:last-child)::after {
 /* Main Content */
 main {
   margin: 2rem auto;
+  padding: 2rem ;
   background-color: #fdfcfb;
   border-radius: 20px; /* rounded card */
-  width: 80%;
   max-width: 800px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* floating effect */
   text-align: center;
