@@ -4,9 +4,6 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f8f5f1;
   color: #3e2f24;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* ensures footer stays at bottom */
 }
 
 /* Header */
@@ -20,7 +17,7 @@ header {
 header nav {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 0; /* no gap, since dividers handle spacing */
 }
 
 header nav a {
@@ -31,7 +28,7 @@ header nav a {
   position: relative;
 }
 
-/* Add dividers only between header links */
+/* Add dividers in header */
 header nav a:not(:last-child)::after {
   content: "|";
   color: white;
@@ -41,13 +38,11 @@ header nav a:not(:last-child)::after {
 /* Main Content */
 main {
   margin: 2rem auto;
-  padding: 2rem;
   background-color: #fdfcfb;
   border-radius: 20px; /* rounded card */
+  width: 0%;
   max-width: 800px;
-  width: 90%;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* floating effect */
-  flex: 1; /* pushes footer down */
   text-align: center;
 }
 
@@ -68,17 +63,6 @@ h2 {
 
 .italic-text {
   font-style: italic;
-}
-
-/* Paragraph Styling */
-p {
-  color: #3b3b3b;
-  font-size: 17px;
-  line-height: 1.6;
-  max-width: 700px;    /* keeps text from stretching too wide */
-  margin: 1em auto;    /* centers text */
-  padding: 0 20px;     /* small side padding */
-  text-align: left;
 }
 
 /* Links */
@@ -116,6 +100,7 @@ footer {
 .footer-nav nav {
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -125,13 +110,20 @@ footer {
   text-decoration: none;
   padding: 0 12px;
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
-/* Add dividers only between footer links */
+/* Add dividers in footer */
 .footer-nav a:not(:last-child)::after {
   content: "|";
   color: white;
   margin-left: 12px;
+}
+
+footer p {
+  margin-top: 1rem;
+  display: block;
 }
 
 /* Validation Buttons */
