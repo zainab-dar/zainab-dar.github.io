@@ -1,5 +1,6 @@
+/* General Reset */
 body {
-  margin: 10px;
+  margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f8f5f1;
   color: #3e2f24;
@@ -7,41 +8,48 @@ body {
 
 /* Header */
 header {
-  background-color: #6b4f3a; 
+  background-color: #6b4f3a;
   color: #fff;
   padding: 1rem;
   text-align: center;
 }
-/* Header Navigation */
+
 header nav {
   display: flex;
   justify-content: center;
-  gap: 12px; /* space between links and dividers */
+  gap: 0; /* no gap, since dividers handle spacing */
 }
 
 header nav a {
   color: white;
   font-weight: bold;
   text-decoration: none;
+  padding: 0 12px;
   position: relative;
 }
 
-/* Add dividers */
-.header nav a::before
-.header nav a::after{
+/* Add dividers in header */
+header nav a:not(:last-child)::after {
   content: "|";
   color: white;
+  margin-left: 12px;
+}
+
+/* Main Content */
+main {
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fdfcfb;
+  border-radius: 20px; /* rounded card */
+  width: 70%;
+  max-width: 800px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* floating effect */
+  text-align: center;
 }
 
 h1 {
   margin: 0;
   font-size: 2rem;
-}
-
-/* Main Content */
-main {
-  padding: 2rem;
-  background-color: #fdfcfb; 
 }
 
 h2 {
@@ -50,10 +58,11 @@ h2 {
 }
 
 .tagline {
-  font-style: italic;  /* italic ONLY for tagline */
+  font-style: italic;
   color: beige;
 }
-.italic-text{
+
+.italic-text {
   font-style: italic;
 }
 
@@ -64,25 +73,25 @@ a {
 }
 
 a:hover {
-  color: #ddd; 
+  color: #ddd;
 }
 
 /* Figure/Image */
 figure {
-  text-align: center; 
-  margin: 20px auto; 
+  text-align: center;
+  margin: 20px auto;
 }
 
 figure img {
-  max-width: 300px; 
+  max-width: 300px;
   height: auto;
   width: 40%;
-  border-radius: 8px; 
+  border-radius: 8px;
 }
 
 /* Footer */
 footer {
-  background-color: #5a3e2b; 
+  background-color: #5a3e2b;
   color: #f4f4f4;
   text-align: center;
   padding: 2rem;
@@ -93,28 +102,29 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap; 
-}
-footer p {
-  margin-top: 1rem;
-  display: block;
+  flex-wrap: wrap;
 }
 
 .footer-nav a {
   color: white;
   font-weight: bold;
   text-decoration: none;
-  padding: 0 12px; 
+  padding: 0 12px;
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px; 
-  position: relative;
 }
 
-.footer-nav a::before,
-.footer-nav a::after {
+/* Add dividers in footer */
+.footer-nav a:not(:last-child)::after {
   content: "|";
   color: white;
+  margin-left: 12px;
+}
+
+footer p {
+  margin-top: 1rem;
+  display: block;
 }
 
 /* Validation Buttons */
