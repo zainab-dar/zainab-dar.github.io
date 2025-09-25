@@ -33,12 +33,16 @@
 		text-align: center;
 	  }
 
+ 
   p {
-      color: #3b3b3b; /* dark gray for readability */
-      font-size: 17px;
-      line-height: 1.6;
-      padding: 0 80px;
-    }
+    color: #3b3b3b; /* dark gray for readability */
+    font-size: 17px;
+    line-height: 1.6;
+    max-width: 700px;       /* limit width of paragraphs */
+    margin: 1em auto;       /* center horizontally */
+    padding: 0 20px;        /* small side padding */
+    text-align: left;       /* keep clean paragraph style */
+  }
 
   a {
       color: #6b4f4f; /* muted brown color for my links */
@@ -62,10 +66,6 @@
     flex: 1; /* makes content expand to push footer to bottom */
     }
   
-  main{
-    padding: auto;
-    margin: 0 auto;
-  }
 	footer {
 		background-color: #cfa5a0;  /* your muted pink */
 		padding: 15px 0;
