@@ -41,7 +41,6 @@ main {
   margin: 2rem auto;
   background-color: #fdfcfb;
   border-radius: 20px; /* rounded card */
-  width: 85%;          /* now covers 85% of screen */
   max-width: 1200px;   /* prevents it from being too wide on big screens */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* floating effect */
   text-align: center;
