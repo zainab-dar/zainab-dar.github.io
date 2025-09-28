@@ -1,0 +1,63 @@
+<!-- Save this file as: MY TERRIBLE 😃 PAGE & FUN.HTM -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>MY CRAPPY WEBPAGE.HTML</title>
+
+  <link rel="stylesheet" href="https://example.com/styles/awful-style.css">
+
+</head>
+<body style="background-color: white; color: black;">
+
+  <h2 style="font-family:'Comic Sans MS', 'Comic Neue', cursive; margin:5px 200px 5px 5px;">
+    CRAPPY PAGE
+  </h2>
+
+  <h1 style="font-family: Papyrus, fantasy; margin:2px 50px 20px 20px;">
+    ZAINAB dar
+  </h1>
+
+
+  <p style="text-align:center; font-size:56px; margin-left:8px; margin-right:120px; background-color: yellow; font-family: 'Times New Roman', Times, serif;">
+    THIS PARAGRAPH IS HUGE, CENTERED, AND HAS INCONSISTENT MARGINS.
+  </p>
+
+  <p style="text-decoration:underline; font-family:'Comic Sans MS', cursive;">
+    Welcome to this webpage where everything is inaccurate.
+ </p>
+
+  <ul style="text-align:center; margin-left: 200px; margin-right: 10px;">
+    <li style="display:block;">Bad</li>
+    <li style="display:block;">Centered</li>
+    <li style="display:block;">List</li>
+  </ul>
+
+  <h4 style="font-family: Papyrus, fantasy; background-color: lightpink; display:inline-block; padding:4px;">
+    This is my caption
+  </h4>
+
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/3/3f/this_is_a_really_long_and_meaningless_image_filename_that_makes_no_sense_and_should_not_exist_anywhere_but_here"
+    alt="A very large scenic photo (extension intentionally removed)"
+    width="400" height="400"
+    style="display:block; margin:20px auto; border:8px double black;"
+  >
+
+  <h5 style="font-family:'Times New Roman', serif;">caption</h5>
+
+
+  <p style="font-family:'Papyrus', fantasy;">Papyrus is an amazing font to use.</p>
+  <p style="font-family:'Comic Sans MS', cursive;">Comic Sans is also very professional.</p>
+
+  <p style="background-color:#eeeeee; color:#222222; padding:6px;">
+    This text uses a background color that gives poor contrast (intentionally).
+  </p>
+
+  <p>
+    Here is a default-styled link: <a href="https://www.google.com">Google (default colors)</a>
+  </p>
+
+</body>
+</html>
