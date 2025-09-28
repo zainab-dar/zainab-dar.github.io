@@ -35,6 +35,9 @@ header nav a:not(:last-child)::after {
   color: white;
   margin-left: 12px;
 }
+.secondary-nav{
+  margin: 15px;
+}
 
 /* Main Content */
 main {
