@@ -2,41 +2,60 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f8f5f1;
+  background-color: #f8f5f1; /* light background */
   color: #3e2f24;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* fill screen height */
+  min-height: 100vh;
 }
 
-/* Floating rectangle (main) */
-main {
-  margin: 0 auto;
-  width: 90%;
+/* Header */
+header {
+  width: 100%;
+  background-color: #8B5E3C; /* brown */
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Main wrapper for floating rectangle */
+.main-wrapper {
+  position: relative;
+  width: 100%;
   max-width: 1200px;
-  background-color: #fdfcfb;
+  margin: 100px auto 0 auto; /* space below fixed header */
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Floating rounded rectangle behind main content */
+.floating-rectangle {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  max-width: 1200px;
+  height: 100%;
+  background-color: #f5f0e1; /* beige */
   border-radius: 20px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
-  padding: 2rem; /* more breathing room */
-  position: relative; /* needed for ::before background square */
-  box-sizing: border-box; /* fixes width+padding issue */
-  z-index: 1;
+  z-index: -1; /* behind main content */
 }
 
-/* Floating rounded square behind */
-main::before {
-  content: "";
-  position: absolute;
-  top: -20px;
-  left: -20px;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  background-color: #e6dfd8;
-  z-index: -1; /* behind main */
-  transform: translate(-10px, -10px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+/* Main Content */
+main {
+  width: 90%;
+  max-width: 1100px;
+  z-index: 1;
+  position: relative;
 }
 
 /* Headings */
