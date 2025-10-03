@@ -35,25 +35,29 @@ header nav a:not(:last-child)::after {
   color: white;
   margin-left: 12px;
 }
-.secondary-nav{
+
+.secondary-nav {
   margin: 15px;
 }
+
 h3 a {
-  color: #222;       /* make sure link text is visible */
+  color: #222;       
   text-decoration: none;
 }
 
 h3 a:hover {
-  color: #0066cc;    /* visible hover effect */
+  color: #0066cc;    
   text-decoration: underline;
 }
+
 /* Main Content */
 main {
-  margin: 2rem auto;
+  margin: 0 auto;            
+  width: 90%;               
+  max-width: 1200px;        
   background-color: #fdfcfb;
-  border-radius: 20px; /* rounded card */
-  max-width: 1200px;   /* prevents it from being too wide on big screens */
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); /* floating effect */
+  border-radius: 20px;      
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); 
   padding: 2rem;
 }
 
@@ -123,7 +127,6 @@ footer {
   position: relative;
 }
 
-/* Add dividers in footer */
 .footer-nav a:not(:last-child)::after {
   content: "|";
   color: white;
@@ -145,4 +148,27 @@ footer p {
   width: 88px;
   height: 31px;
   margin: 0 5px;
+}
+
+
+/* Laptop / Desktop Screens */
+@media screen and (min-width: 981px) and (max-width: 1400px) {
+  main {
+    width: 85%; /* slightly narrower */
+  }
+}
+
+/* Tablet Screens */
+@media screen and (min-width: 601px) and (max-width: 980px) {
+  main {
+    width: 95%; 
+  }
+}
+
+/* Mobile Screens */
+@media screen and (max-width: 600px) {
+  main {
+    width: 98%;  
+    padding: 1rem; 
+  }
 }
