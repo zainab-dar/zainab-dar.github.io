@@ -4,63 +4,42 @@ body {
   font-family: Arial, sans-serif;
   background-color: #f8f5f1;
   color: #3e2f24;
-}
-
-/* Header */
-header {
-  background-color: #6b4f3a;
-  color: #fff;
-  padding: 1rem;
-  text-align: center;
-}
-
-header nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  min-height: 100vh; /* fill screen height */
 }
 
-header nav a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0 12px;
-  position: relative;
-}
-
-/* Add dividers in header */
-header nav a:not(:last-child)::after {
-  content: "|";
-  color: white;
-  margin-left: 12px;
-}
-
-.secondary-nav {
-  margin: 15px;
-}
-
-h3 a {
-  color: #222;       
-  text-decoration: none;
-}
-
-h3 a:hover {
-  color: #0066cc;    
-  text-decoration: underline;
-}
-
-/* Main Content */
+/* Floating rectangle (main) */
 main {
-  margin: 0 auto;            
-  width: 90%;               
-  max-width: 1200px;        
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
   background-color: #fdfcfb;
-  border-radius: 20px;      
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15); 
-  padding: 1rem;
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 2rem; /* more breathing room */
+  position: relative; /* needed for ::before background square */
+  box-sizing: border-box; /* fixes width+padding issue */
+  z-index: 1;
 }
 
+/* Floating rounded square behind */
+main::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  background-color: #e6dfd8;
+  z-index: -1; /* behind main */
+  transform: translate(-10px, -10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Headings */
 h1 {
   margin: 0;
   font-size: 2rem;
@@ -69,105 +48,24 @@ h1 {
 h2 {
   color: #6b4f3a;
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.tagline {
-  font-style: italic;
-  color: beige;
-}
-
-.italic-text {
-  font-style: italic;
-}
-
-/* Links */
-a {
-  color: white;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #ddd;
-}
-
-/* Figure/Image */
-figure {
-  text-align: center;
-  margin: 20px auto;
-}
-
-figure img {
-  max-width: 300px;
-  height: auto;
-  width: 40%;
-  border-radius: 8px;
-}
-
-/* Footer */
-footer {
-  background-color: #5a3e2b;
-  color: #f4f4f4;
-  text-align: center;
-  padding: 2rem;
-  margin-top: 2rem;
-}
-
-.footer-nav nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.footer-nav a {
-  color: white;
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0 12px;
-  position: relative;
-}
-
-.footer-nav a:not(:last-child)::after {
-  content: "|";
-  color: white;
-  margin-left: 12px;
-}
-
-footer p {
-  margin-top: 1rem;
-  display: block;
-}
-
-/* Validation Buttons */
-.validation-buttons {
-  margin-top: 1rem;
-}
-
-.validation-buttons img {
-  border: 0;
-  width: 88px;
-  height: 31px;
-  margin: 0 5px;
-}
-
-
-/* Laptop / Desktop Screens */
+/* Responsive tweaks */
 @media screen and (min-width: 981px) and (max-width: 1400px) {
   main {
-    width: 85%; /* slightly narrower */
+    width: 85%;
   }
 }
 
-/* Tablet Screens */
 @media screen and (min-width: 601px) and (max-width: 980px) {
   main {
-    width: 95%; 
+    width: 95%;
   }
 }
 
-/* Mobile Screens */
 @media screen and (max-width: 600px) {
   main {
-    width: 98%;  
+    width: 98%;
   }
 }
