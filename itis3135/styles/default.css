@@ -148,6 +148,21 @@ footer p {
   height: 31px;
   margin: 0 5px;
 }
+/* Indent all <strong> elements */
+strong {
+    display: inline-block;
+    margin-left: 1rem; /* Adjust space as needed */
+}
+
+/* Style course list */
+ul.courses {
+    list-style-type: none; /* remove bullets */
+    padding-left: 1rem; /* indent the entire list */
+}
+
+ul.courses li {
+    margin-bottom: 1rem; /* space between courses */
+}
 
 
 /* Laptop / Desktop Screens */
