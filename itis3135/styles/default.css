@@ -188,3 +188,78 @@ p, ul {
   margin-bottom: 1rem;
   line-height: 1.6;    
 }
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2rem 0;
+    font-size: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header */
+th {
+    background-color: brown; /* Dolphin teal accent */
+    color: white;
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 3px solid beige;
+    font-weight: 600;
+}
+
+/* Table Cells */
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: top;
+    line-height: 1.6;
+}
+
+/* Alternating Row Colors for Readability */
+tbody tr:nth-child(even) {
+    background-color: #f9fdfd;
+}
+
+/* Hover Effect for Interactivity */
+tbody tr:hover {
+    background-color: #e0f7fa;
+    transition: background-color 0.3s ease;
+}
+
+/* Add Cute Rounded Corners for the First/Last Cells */
+table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+/* Schedule Section Styling */
+.schedule {
+    background-color: #f0fcff;
+    border: 2px solid #b2ebf2;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 1px 4px rgba(0, 128, 128, 0.1);
+}
+
+.schedule h2 {
+    color: #006666;
+    margin-bottom: 0.75rem;
+}
+
+.schedule ul li {
+    margin-bottom: 0.5rem;
+}
+
+}
