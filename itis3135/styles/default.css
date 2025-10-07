@@ -253,13 +253,11 @@ table tr:last-child td:last-child {
     box-shadow: 0 1px 4px rgba(0, 128, 128, 0.1);
 }
 
-.schedule h2 {
+.schedule {
     color: #006666;
     margin-bottom: 0.75rem;
 }
 
 .schedule ul li {
     margin-bottom: 0.5rem;
-}
-
 }
