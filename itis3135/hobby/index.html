@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cookie & Crumb — Cake Decorating</title>
+
+  <style>
+    :root {
+      --bg: #fff6f0;
+      --accent: #b3472a;
+      --accent-light: #e07a5f;
+      --card: #fffaf5;
+      --text: #3e2f1c;
+      --muted: #7b5f4d;
+      --maxw: 1100px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Poppins", "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #fdf3e7, #ffe8d6);
+      color: var(--text);
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      width: 100%;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .brand h1 {
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .nav-link {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.95rem;
+      border-radius: 8px;
+      padding: 0.5rem 0.9rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .nav-link:hover,
+    .nav-link[aria-current="true"] {
+      background: var(--accent-light);
+      color: #fff;
+    }
+
+    main {
+      margin-top: 1rem;
+    }
+
+    section {
+      display: none;
+      padding: 1rem 0 2rem;
+      border-radius: 12px;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent-light);
+      display: inline-block;
+      padding-bottom: 0.2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 1rem;
+      box-shadow: 0 4px 12px rgba(128, 64, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(128, 64, 0, 0.15);
+    }
+
+    h3 {
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    p, li {
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    ul { margin-left: 1.2rem; }
+
+    /* Cake Gallery */
+    .cake-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 0.7rem;
+      background-color: #f5d6b4;
+    }
+
+    .cake-card h4 {
+      font-size: 1.1rem;
+      color: var(--accent);
+      margin-bottom: 0.4rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 640px) {
+      header { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap" role="application">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">🍂</div>
+        <h1>Cookie & Crumb — Cake Decorating</h1>
+      </div>
+
+      <nav aria-label="Primary">
+        <button class="nav-link" data-target="what" aria-current="true">What</button>
+        <button class="nav-link" data-target="who">Who</button>
+        <button class="nav-link" data-target="when">When</button>
+        <button class="nav-link" data-target="where">Where</button>
+        <button class="nav-link" data-target="how">How</button>
+        <button class="nav-link" data-target="why">Why</button>
+        <button class="nav-link" data-target="journey">Cake Journey</button>
+      </nav>
+    </header>
+
+    <main>
+      <!-- WHAT -->
+      <section id="what" class="active">
+        <h2>What — Home</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Welcome to My Cake Making Journey</h3>
+            <p>Over the last year, I’ve gotten into baking and decorating custom cakes! I love experimenting with stacking layers of tres leches cake, testing icing textures, and creating my own homemade fillings.</p>
+          </article>
+
+          <article class="card">
+            <h3>Signature Styles</h3>
+            <ul>
+              <li>Fresh Homemade Strawberry Jam Filling</li>
+              <li>Fluffy, Creamy Whipped Icing</li>
+              <li>Multi-layer Tres Leches Cake</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- WHO -->
+      <section id="who">
+        <h2>Who — About Me</h2>
+        <div class="grid">
+          <article class="card">
+            <p>I'm Zainab — I started cake decorating as a creative outlet and turned it into a passion for sharing celebration sweets with friends and family.</p>
+          </article>
+
+          <article class="card">
+            <p>I bake for family events and special occasions. I’m still working on getting smoother bases and perfecting my technique, but I hope to one day start a small side business selling cakes.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- WHEN -->
+      <section id="when">
+        <h2>When — Schedule & Seasons</h2>
+        <div class="grid">
+          <article class="card">
+            <p>I bake all year round, each season inspires new flavors and decorations. My sister’s wedding was one of my favorite projects, and I got to make cakes for several of her events!</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- WHERE -->
+      <section id="where">
+        <h2>Where — My Kitchen</h2>
+        <div class="grid">
+          <article class="card">
+            <p>I typically bake in my home kitchen. I usually make one cake at a time, but I once baked a seven-layer two-tier cake that I had to store as two separate cakes before stacking them.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- HOW -->
+      <section id="how">
+        <h2>How — Techniques & Process</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Techniques I Use</h3>
+            <ul>
+              <li>Crumb coat and chilled layering</li>
+              <li>Soaking cake in tres leches mix overnight</li>
+              <li>Support dowel methods for tiered cakes</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- WHY -->
+      <section id="why">
+        <h2>Why — Motivation & Purpose</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Why I Bake</h3>
+            <p>Baking is creative therapy for me, it’s both technical and artistic, which makes it so rewarding. It’s a perfect mix of patience, skill, and creativity.</p>
+          </article>
+
+          <article class="card">
+            <h3>The Joy of Sharing</h3>
+            <p>Sharing cakes creates small moments of joy. Seeing friends and family enjoy what I made and look forward to having my cake at any ocassion is especially rewarding.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- JOURNEY -->
+      <section id="journey">
+        <h2>Cake Journey — My Progress</h2>
+        <div class="grid">
+          <article class="card cake-card">
+            <h4>Cake #1</h4>
+            <img alt="not pictured">
+            <p>Not pictured because it was really bad and did not think to take a picture of it in the moment!</p>
+          </article>
+
+          <article class="card cake-card">
+            <h4>Cake #2</h4>
+            <img src="./images/cake_2.jpeg" alt="Cake #2 Image Placeholder">
+            <p>Too wet, the cake fell apart when stacking the layers, but it was delicious!</p>
+          </article>
+
+          <article class="card cake-card">
+            <h4>Cake #3</h4>
+            <img src="./images/cake_3.JPG" alt="Cake #3 Image Placeholder">
+            <p>My graduation cake! Everything was perfect! I loved the decortions, color, icing, and the taste was perfect.</p>
+          </article>
+
+          <article class="card cake-card">
+            <h4>Cake #4</h4>
+            <img src="./images/cake_4.jpg" alt="Cake #4 Image Placeholder">
+            <p>First two-tier cake! The dark icing was very hard to achieve. I eneded up melting my icing in the process, but it tasted amazing.</p>
+          </article>
+
+          <article class="card cake-card">
+            <h4>Cake #5</h4>
+            <img src="./images/cake_5.jpg" alt="Cake #5 Image Placeholder">
+            <p>Perfect color for the event. Did small piping, not the smoothest but it was still very nice. It also survived a 45-minute drive without moving!</p>
+          </article>
+
+          <article class="card cake-card">
+            <h4>Cake #6</h4>
+            <img src="./images/cake_6.jpg" alt="Cake #6 Image Placeholder">
+            <p>Simple and elegant. I ran low on icing, but it fit the minimalist aesthetic.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+    </footer>
+  </div>
+</body>
+</html>
