@@ -267,7 +267,7 @@ table tr:last-child td:last-child {
 
 .footer-credit a {
   text-decoration: none;
-  color: #ffd6a5; /* soft highlight color */
+  color: white; /* soft highlight color */
   font-size: 1.3em; /* increased size */
   font-weight: bold;
 }
