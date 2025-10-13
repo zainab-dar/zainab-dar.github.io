@@ -261,3 +261,13 @@ table tr:last-child td:last-child {
 .schedule ul li {
     margin-bottom: 0.5rem;
 }
+.footer-credit {
+  margin-top: 15px;
+}
+
+.footer-credit a {
+  text-decoration: none;
+  color: #ffd6a5; /* soft highlight color */
+  font-size: 1.3em; /* increased size */
+  font-weight: bold;
+}
