@@ -98,7 +98,6 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
     }
 
     .card {
@@ -326,16 +325,16 @@
     const navLinks = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll("section");
 
-    navLinks.forEach(link => {
-      link.addEventListener("click", () => {
+    navLinks.forEach(link =>) {
+      link.addEventListener("click", () =>) {
         sections.forEach(section => section.classList.remove("active"));
         navLinks.forEach(btn => btn.removeAttribute("aria-current"));
 
         const target = link.getAttribute("data-target");
         document.getElementById(target).classList.add("active");
         link.setAttribute("aria-current", "true");
-      });
-    });
+      };
+    );
   </script>
 </body>
 </html>
