@@ -45,9 +45,6 @@
       display: flex;
       align-items: center;
       gap: 0.7rem;
-    }
-
-    .brand {
       font-size: 1.6rem;
       color: var(--accent);
     }
@@ -101,6 +98,7 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
     }
 
     .card {
@@ -116,7 +114,7 @@
       box-shadow: 0 6px 16px rgba(128, 64, 0, 0.15);
     }
 
-    h3 {
+    h3, h4 {
       color: var(--accent);
       margin-bottom: 0.6rem;
     }
@@ -128,6 +126,22 @@
 
     ul { margin-left: 1.2rem; }
     
+    figure {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    figure img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    figcaption {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
 
     .cake-card img {
       width: 100%;
@@ -138,17 +152,21 @@
       background-color: #f5d6b4;
     }
 
-    .cake-card {
-      font-size: 1.1rem;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-    }
-
     footer {
       margin-top: 2rem;
       text-align: center;
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.3rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 640px) {
@@ -161,7 +179,7 @@
   <div class="wrap" role="application">
     <header>
       <div class="brand">
-        <div class="logo" aria-hidden="true">🍂</div>
+        <div class="logo" aria-hidden="true">🧁</div>
         <h1>Making Cakes</h1>
       </div>
 
@@ -172,17 +190,21 @@
         <button class="nav-link" data-target="where">Where</button>
         <button class="nav-link" data-target="how">How</button>
         <button class="nav-link" data-target="why">Why</button>
-        <button class="nav-link" data-target="journey">Cake Journey</button>
+        <button class="nav-link" data-target="ai">AI Prompts</button>
       </nav>
     </header>
 
-    <main>
-      <section id="what" class="active">
+    <main aria-live="polite">
+      <section id="what" class="active" role="region">
         <h2>Making Cakes ~ What</h2>
         <div class="grid">
           <article class="card">
             <h3>Welcome to My Cake Making Journey</h3>
             <p>Over the last year, I’ve gotten into baking and decorating cakes, specifically tres leches cakes! I love experimenting with different cake themes, testing icing textures, and creating my own homemade fillings.</p>
+            <figure>
+              <img src="./images/ai_image_1.png" alt="cake supplies on a counter">
+              <figcaption><em>AI prompt used: “generate a photo of cake baking supplies on a counter.”</em></figcaption>
+            </figure>
           </article>
           <article class="card">
             <h3>Signature Styles</h3>
@@ -195,12 +217,16 @@
         </div>
       </section>
 
-      <section id="who">
+      <section id="who" role="region">
         <h2>Making Cakes ~ Who</h2>
         <div class="grid">
           <article class="card">
             <h3>Who Am I</h3>
-            <p>I'm Zainab! I started cake decorating after watching several tiktok videos of cake decorators making the most intricate and yummy cakes and being inspired to do the same. It started off rough and was a big learning curve but eventually I learned different tips and tricks and became confident in my ability to make cakes. Cakes have now become a creative outlet for me to experiment with different flavors and styles for every special ocassion.</p>
+            <p>I'm Zainab! I started cake decorating after watching several TikTok videos of cake decorators making the most intricate and yummy cakes and being inspired to do the same.</p>
+            <figure>
+              <img src="./images/ai_image_2.png" alt="Cake decorating setup">
+              <figcaption><em>AI prompt used: “generate a cartoon photo of a hijabi girl decorating a cake.”</em></figcaption>
+            </figure>
           </article>
           <article class="card">
             <h3>Who do I bake for</h3>
@@ -209,27 +235,35 @@
         </div>
       </section>
 
-      <section id="when">
+      <section id="when" role="region">
         <h2>Making Cakes ~ When</h2>
         <div class="grid">
           <article class="card">
             <h3>When do I bake</h3>
-            <p>I bake all year round, each season inspires new flavors and decorations. Most recently for my sister’s wedding I got to make several cakes for her events which was incredibly special. </p>
+            <p>I bake all year round; each season inspires new flavors and decorations. Most recently, for my sister’s wedding, I got to make several cakes for her events which was incredibly special.</p>
+            <figure>
+              <img src="./images/cake_5.jpg" alt="orange cake with mr and mrs cake toppe and pink and orange flowers">
+              <figcaption><em>This is a picture of a cake I made for one of my sister's pre-wedding events! It was very fun to make and everyone loved it. </em></figcaption>
+            </figure>
           </article>
         </div>
       </section>
 
-      <section id="where">
+      <section id="where" role="region">
         <h2>Making Cakes ~ Where</h2>
         <div class="grid">
           <article class="card">
             <h3>Where do I bake</h3>
             <p>I typically bake in my home kitchen. I usually make one cake at a time so am not in need of a bigger space. The biggest cake I've baked was a seven-layer two-tier cake that I had to store as two separate cakes until it was close to the event time and I could stack them.</p>
+            <figure>
+              <img src="./images/ai_image_3.png" alt="girl using standmixer at a Home kitchen counter  ">
+              <figcaption><em>AI prompt used: “Using the last image as reference create an image of the same girl standing by a standmixer in a home kitchen with her back turned.”</em></figcaption>
+            </figure>
           </article>
         </div>
       </section>
 
-      <section id="how">
+      <section id="how" role="region">
         <h2>Making Cakes ~ How</h2>
         <div class="grid">
           <article class="card">
@@ -239,62 +273,52 @@
               <li>Soaking cake in tres leches mix overnight</li>
               <li>Support dowel methods for tiered cakes</li>
             </ul>
+            <figure>
+              <img src="./images/ai_image_4.png" alt="girl frosting cake on turn table">
+              <figcaption><em>AI prompt used: “create another image with the girl now facing forward again and frosting a cake on a turn table, doing the crumb coat.”</em></figcaption>
+            </figure>
           </article>
         </div>
       </section>
 
-      <section id="why">
+      <section id="why" role="region">
         <h2>Making Cakes ~ Why</h2>
         <div class="grid">
           <article class="card">
             <h3>Why I Bake</h3>
-            <p>Baking is a form of creative therapy for me, it’s both technical and artistic, which makes it so rewarding. It’s a perfect mix of patience, skill, and creativity that I have find very enjoyable.</p>
+            <p>Baking is a form of creative therapy for me. It’s both technical and artistic, which makes it so rewarding. It’s a perfect mix of patience, skill, and creativity that I find very enjoyable.</p>
           </article>
           <article class="card">
             <h3>Sharing With Others</h3>
             <p>Making cakes creates small moments of joy. Seeing friends and family enjoy what I made and look forward to having my cake at any occasion is especially rewarding.</p>
+            <figure>
+              <img src="./images/ai_image_5.png" alt="Friends sharing a cake">
+              <figcaption><em>AI prompt used: “generate an image of a final cake with strawberries on top of the cake and some piping. Then add some hands of people reaching towards the cake ready to dig in.”</em></figcaption>
+            </figure>
           </article>
         </div>
       </section>
 
-      <section id="journey">
-        <h2>Making Cakes ~ Cake Journey</h2>
-        <div class="grid">
-          <article class="card cake-card">
-            <h4>Cake #1</h4>
-            <p>Not pictured because it was really bad and I did not think to take a picture of it in the moment!</p>
-          </article>
-          <article class="card cake-card">
-            <h4>Cake #2</h4>
-            <img src="./images/cake_2.jpeg" alt="Cake #2 Image Placeholder">
-            <p>Too wet, the cake fell apart when stacking the layers, but it was delicious!</p>
-          </article>
-          <article class="card cake-card">
-            <h4>Cake #3</h4>
-            <img src="./images/cake_3.JPG" alt="Cake #3 Image Placeholder">
-            <p>My graduation cake! Everything was perfect! I loved the decorations, color, icing, and the taste was perfect.</p>
-          </article>
-          <article class="card cake-card">
-            <h4>Cake #4</h4>
-            <img src="./images/cake_4.jpg" alt="Cake #4 Image Placeholder">
-            <p>First two-tier cake! The dark icing was very hard to achieve. I ended up melting my icing in the process, but it tasted amazing.</p>
-          </article>
-          <article class="card cake-card">
-            <h4>Cake #5</h4>
-            <img src="./images/cake_5.jpg" alt="Cake #5 Image Placeholder">
-            <p>Perfect color for the event. Did small piping, not the smoothest but it was still very nice. It also survived a 45-minute drive without moving!</p>
-          </article>
-          <article class="card cake-card">
-            <h4>Cake #6</h4>
-            <img src="./images/cake_6.jpg" alt="Cake #6 Image Placeholder">
-            <p>Simple and elegant. I ran low on icing, but it fit the minimalist aesthetic.</p>
-          </article>
+      <section id="ai" role="region">
+        <h2>AI Prompts</h2>
+        <div class="card">
+          <p><strong>AI Prompts used for images:</strong></p>
+          <ul>
+            <li>“photo of a decorated tres leches cake on a wooden counter”</li>
+            <li>“person decorating a cake with piping bag on a pastel counter”</li>
+            <li>“pastel wedding cake with floral piping on white stand”</li>
+            <li>“home kitchen counter with cake baking tools and stand mixer”</li>
+            <li>“layered cake getting crumb coated with icing spatula”</li>
+            <li>“friends smiling and eating homemade cake at a kitchen table”</li>
+          </ul>
+          <p><em>I used AI only for image generation.</em></p>
         </div>
       </section>
     </main>
 
     <footer>
-      <p>© 2025 — All Rights Reserved</p>
+      <p>© 2025 — All Rights Reserved 🍰 | 
+      </p>
     </footer>
   </div>
 
@@ -302,14 +326,11 @@
     const navLinks = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll("section");
 
-    navLinks.forEach(link =>) {
-      link.addEventListener("click", () =>) {
-        // Remove active from all sections
+    navLinks.forEach(link => {
+      link.addEventListener("click", () => {
         sections.forEach(section => section.classList.remove("active"));
-        // Remove aria-current from all buttons
         navLinks.forEach(btn => btn.removeAttribute("aria-current"));
 
-        // Activate clicked section
         const target = link.getAttribute("data-target");
         document.getElementById(target).classList.add("active");
         link.setAttribute("aria-current", "true");
