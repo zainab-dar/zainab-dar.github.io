@@ -325,10 +325,10 @@
     const navLinks = document.querySelectorAll(".nav-link");
     const sections = document.querySelectorAll("section");
 
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
       link.addEventListener("click", () => {
-        sections.forEach(section => section.classList.remove("active"));
-        navLinks.forEach(btn => btn.removeAttribute("aria-current"));
+        sections.forEach((section) => section.classList.remove("active"));
+        navLinks.forEach((btn) => btn.removeAttribute("aria-current"));
 
         const target = link.getAttribute("data-target");
         document.getElementById(target).classList.add("active");
