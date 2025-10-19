@@ -53,6 +53,13 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
+      align-items: center;
+    }
+
+    .nav-divider {
+      color: var(--accent-light);
+      font-size: 1.2rem;
+      user-select: none;
     }
 
     .nav-link {
@@ -152,6 +159,28 @@
       background-color: #f5d6b4;
     }
 
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+
+    th, td {
+      padding: 0.7rem;
+      text-align: left;
+      border-bottom: 1px solid var(--accent-light);
+    }
+
+    th {
+      background-color: var(--accent-light);
+      color: white;
+      font-weight: 600;
+    }
+
+    tr:hover {
+      background-color: rgba(179, 71, 42, 0.05);
+    }
+
     footer {
       margin-top: 2rem;
       text-align: center;
@@ -171,6 +200,7 @@
 
     @media (max-width: 640px) {
       header { flex-direction: column; align-items: flex-start; }
+      .nav-divider { display: none; }
     }
   </style>
 </head>
@@ -185,11 +215,17 @@
 
       <nav aria-label="Primary">
         <button class="nav-link" data-target="what" aria-current="true">What</button>
+        <span class="nav-divider" aria-hidden="true">🍰</span>
         <button class="nav-link" data-target="who">Who</button>
+        <span class="nav-divider" aria-hidden="true">🍰</span>
         <button class="nav-link" data-target="when">When</button>
+        <span class="nav-divider" aria-hidden="true">🍰</span>
         <button class="nav-link" data-target="where">Where</button>
+        <span class="nav-divider" aria-hidden="true">🍰</span>
         <button class="nav-link" data-target="how">How</button>
+        <span class="nav-divider" aria-hidden="true">🍰</span>
         <button class="nav-link" data-target="why">Why</button>
+        <span class="nav-divider" aria-hidden="true">🍰</span>
         <button class="nav-link" data-target="ai">AI Prompts</button>
       </nav>
     </header>
@@ -214,6 +250,10 @@
               <li>Multi-layer Tres Leches Cake</li>
             </ul>
           </article>
+          <article class="card">
+            <h3>What Makes Tres Leches Special</h3>
+            <p>Tres leches cake is a traditional Latin American dessert soaked in three kinds of milk: evaporated milk, condensed milk, and heavy cream. The result is an incredibly moist and rich cake that melts in your mouth. I love how versatile it is - you can add different flavors and toppings to create unique variations for every occasion.</p>
+          </article>
         </div>
       </section>
 
@@ -232,6 +272,10 @@
             <h3>Who do I bake for</h3>
             <p>I bake for family events and special occasions. I'm still working on getting smoother bases and perfecting my technique, but I hope to eventually start a small side business making and selling cakes for other people.</p>
           </article>
+          <article class="card">
+            <h3>My Inspiration</h3>
+            <p>My biggest inspiration comes from professional bakers on social media. I eventually decided to give it a shot myself and bake a cake for a small home gathering. I'm still constantly learning new techniques and challenging myself with more complex designs and growing every single day.</p>
+          </article>
         </div>
       </section>
 
@@ -242,9 +286,42 @@
             <h3>When do I bake</h3>
             <p>I bake all year round; each season inspires new flavors and decorations. Most recently, for my sister's wedding, I got to make several cakes for her events which was incredibly special.</p>
             <figure>
-              <img src="./images/cake_5.jpg" alt="orange cake with mr and mrs cake toppe and pink and orange flowers">
+              <img src="./images/cake_5.jpg" alt="orange cake with mr and mrs cake topper and pink and orange flowers">
               <figcaption><em>This is a picture of a cake I made for one of my sister's pre-wedding events! It was very fun to make and everyone loved it.</em></figcaption>
             </figure>
+          </article>
+          <article class="card">
+            <h3>Seasonal Specialties</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>Season</th>
+                  <th>Favorite Flavors</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Spring</td>
+                  <td>Strawberry, Lemon, Vanilla</td>
+                </tr>
+                <tr>
+                  <td>Summer</td>
+                  <td>Mango, Peach, tres leches</td>
+                </tr>
+                <tr>
+                  <td>Fall</td>
+                  <td>Pumpkin Spice, tres leches</td>
+                </tr>
+                <tr>
+                  <td>Winter</td>
+                  <td>Chocolate, tres leches, biscoff </td>
+                </tr>
+              </tbody>
+            </table>
+          </article>
+          <article class="card">
+            <h3>Best Times to Bake</h3>
+            <p>I typically bake on weekends when I have more time to focus on the intricate details. For events, I usually start baking 2-3 days in advance to allow time for proper assembly and decoration. The night before an event is when I do the final touches and transport preparation.</p>
           </article>
         </div>
       </section>
@@ -259,6 +336,14 @@
               <img src="./images/ai_image_3.png" alt="girl using standmixer at a Home kitchen counter">
               <figcaption><em>AI prompt used: "Using the last image as reference create an image of the same girl standing by a standmixer in a home kitchen with her back turned."</em></figcaption>
             </figure>
+          </article>
+          <article class="card">
+            <h3>My Baking Setup</h3>
+            <p>My kitchen has a dedicated corner for cake decorating with all my tools organized and ready to go. I have a stand mixer, multiple cake pans in different sizes, a turntable for decorating, and various piping tips and spatulas.</p>
+          </article>
+          <article class="card">
+            <h3>Where I Source Ingredients</h3>
+            <p>I get most of my baking supplies from local grocery stores, but for specialty items like unique sprinkles, food coloring, and cake decorating tools, I shop at hobby lobby or order online. I solely use fresh fruits and make my fillings and whip from scratch which really makes a difference in the flavor of my fillings and toppings.</p>
           </article>
         </div>
       </section>
@@ -278,6 +363,14 @@
               <figcaption><em>AI prompt used: "create another image with the girl now facing forward again and frosting a cake on a turn table, doing the crumb coat."</em></figcaption>
             </figure>
           </article>
+          <article class="card">
+            <h3>My Process Step-by-Step</h3>
+            <p>First, I bake the cake layers and let them cool completely. Then I level each layer and soak them with the tres leches mixture. After refrigerating overnight, I apply a crumb coat of whipped icing and chill again. Finally, I add the final layer of frosting, pipe decorations, and stack the layers with fresh filligns and other toppings. Each step requires patience but the end results are worth it.</p>
+          </article>
+          <article class="card">
+            <h3>Essential Tools</h3>
+            <p>The most important tools for making my cakes are my offset spatula for smooth frosting, piping bags with various tips for decorative work, a cake turntable for even coating, and a good quality stand mixer, i truly couldn't manage having to hand whip everything. I also can't live without my cake leveler, bench scraper, and dowel rods for multi-tiered cakes.</p>
+          </article>
         </div>
       </section>
 
@@ -296,22 +389,24 @@
               <figcaption><em>AI prompt used: "generate an image of a final cake with strawberries on top of the cake and some piping. Then add some hands of people reaching towards the cake ready to dig in."</em></figcaption>
             </figure>
           </article>
+          <article class="card">
+            <h3>Future Goals</h3>
+            <p>My long-term goal is to turn this hobby into a small side business. I want to continue perfecting my craft, experimenting with new flavors and designs, and eventually take custom orders for special events. Beyond that, I'd love to teach cake decorating workshops to share my passion with others in my community.</p>
+          </article>
         </div>
       </section>
 
       <section id="ai">
         <h2>AI Prompts</h2>
         <div class="card">
-          <p><strong>AI Prompts used for images:</strong></p>
+          <p><strong>AI Prompts used:</strong></p>
           <ul>
-            <li>"photo of a decorated tres leches cake on a wooden counter"</li>
-            <li>"person decorating a cake with piping bag on a pastel counter"</li>
-            <li>"pastel wedding cake with floral piping on white stand"</li>
-            <li>"home kitchen counter with cake baking tools and stand mixer"</li>
-            <li>"layered cake getting crumb coated with icing spatula"</li>
-            <li>"friends smiling and eating homemade cake at a kitchen table"</li>
+            <li>"generate a photo of cake baking supplies on a counter."</li>
+            <li>"generate a cartoon photo of a hijabi girl decorating a cake."</li>
+            <li>"Using the last image as reference create an image of the same girl standing by a standmixer in a home kitchen with her back turned."</li>
+            <li>"create another image with the girl now facing forward again and frosting a cake on a turn table, doing the crumb coat."</li>
+            <li>"generate an image of a final cake with strawberries on top of the cake and some piping. Then add some hands of people reaching towards the cake ready to dig in."</li>
           </ul>
-          <p><em>I used AI only for image generation.</em></p>
         </div>
       </section>
     </main>
