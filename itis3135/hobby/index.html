@@ -84,13 +84,13 @@
     }
 
     section {
-      display: none;
+      display: none !important;
       padding: 1rem 0 2rem;
       border-radius: 12px;
     }
 
-    .active {
-      display: block;
+    section.active {
+      display: block !important;
     }
 
     h2 {
@@ -420,17 +420,25 @@
   </div>
 
   <script>
-    const navLinks = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll("section");
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("section");
 
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        sections.forEach((section) => section.classList.remove("active"));
-        navLinks.forEach((btn) => btn.removeAttribute("aria-current"));
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          // Remove active class from all sections
+          sections.forEach((section) => section.classList.remove("active"));
+          
+          // Remove aria-current from all buttons
+          navLinks.forEach((btn) => btn.removeAttribute("aria-current"));
 
-        const target = link.getAttribute("data-target");
-        document.getElementById(target).classList.add("active");
-        link.setAttribute("aria-current", "true");
+          // Add active class to target section
+          const target = link.getAttribute("data-target");
+          document.getElementById(target).classList.add("active");
+          
+          // Add aria-current to clicked button
+          link.setAttribute("aria-current", "true");
+        });
       });
     });
   </script>
