@@ -14,34 +14,55 @@
     <h2>Introduction Form</h2>
     <h3>Please submit the form below.</h3>
 
-    <form id="introForm">
+    <form id="intro-form">
+      <!-- Basic Info -->
       <fieldset>
         <legend>Basic Info</legend>
-        <label>First Name: <input type="text" id="firstName" value="Zainab" required></label><br>
-        <label>Middle Name: <input type="text" id="middleName" placeholder="Optional"></label><br>
-        <label>Preferred Name: <input type="text" id="nickname" placeholder="Optional"></label><br>
-        <label>Last Name: <input type="text" id="lastName" value="Dar" required></label><br>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" value="Zainab" required><br>
+
+        <label for="middleName">Middle Name:</label>
+        <input type="text" id="middleName" name="middleName" placeholder="Optional"><br>
+
+        <label for="nickname">Preferred Name:</label>
+        <input type="text" id="nickname" name="nickname" placeholder="Optional"><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" value="Dar" required><br>
       </fieldset>
 
+      <!-- Mascot Info -->
       <fieldset>
         <legend>Mascot Info</legend>
-        <label>Mascot Adjective: <input type="text" id="mascotAdj" value="Clever" required></label><br>
-        <label>Mascot Animal: <input type="text" id="mascotAnimal" value="Panther" required></label><br>
-        <label>Divider: <input type="text" id="divider" value="~" required></label>
+        <label for="mascotAdj">Mascot Adjective:</label>
+        <input type="text" id="mascotAdj" name="mascotAdj" value="Clever" required><br>
+
+        <label for="mascotAnimal">Mascot Animal:</label>
+        <input type="text" id="mascotAnimal" name="mascotAnimal" value="Panther" required><br>
+
+        <label for="divider">Divider:</label>
+        <input type="text" id="divider" name="divider" value="~" required>
       </fieldset>
 
+      <!-- Image -->
       <fieldset>
         <legend>Image</legend>
-        <label>Upload Picture: <input type="file" id="picture" accept="image/*"></label><br>
-        <label>Caption: <input type="text" id="caption" value="This is me!" required></label>
+        <label for="picture">Upload Picture:</label>
+        <input type="file" id="picture" name="picture" accept="image/*"><br>
+
+        <label for="caption">Caption:</label>
+        <input type="text" id="caption" name="caption" value="This is me!" required>
       </fieldset>
 
+      <!-- Personal Statement -->
       <fieldset>
         <legend>Personal Statement</legend>
-        <textarea id="personalStatement" required>Hi, I'm Zainab...</textarea>
+        <label for="personalStatement">Tell us about yourself:</label><br>
+        <textarea id="personalStatement" name="personalStatement" required>Hi, I'm Zainab...</textarea>
       </fieldset>
 
-      <fieldset id="courses">
+      <!-- Courses -->
+      <fieldset id="courses-container">
         <legend>Courses</legend>
         <div class="course">
           <input type="text" placeholder="Department (e.g., ITIS)" required>
@@ -50,23 +71,29 @@
           <input type="text" placeholder="Reason for Taking" required>
           <button type="button" class="deleteCourse">Delete</button>
         </div>
-        <button type="button" id="addCourse">Add Course</button>
+        <button type="button" id="add-course-btn">Add Course</button>
       </fieldset>
 
+      <!-- Quote -->
       <fieldset>
         <legend>Quote</legend>
-        <label>Quote: <input type="text" id="quote" value="Keep learning." required></label><br>
-        <label>Author: <input type="text" id="quoteAuthor" value="Anonymous" required></label>
+        <label for="quote">Quote:</label>
+        <input type="text" id="quote" name="quote" value="Keep learning." required><br>
+
+        <label for="quoteAuthor">Author:</label>
+        <input type="text" id="quoteAuthor" name="quoteAuthor" value="Anonymous" required>
       </fieldset>
 
+      <!-- Buttons -->
       <div class="buttons">
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>
-        <button type="button" id="clear">Clear</button>
+        <button type="button" id="clear-btn">Clear</button>
       </div>
     </form>
 
-    <div id="output"></div>
+    <!-- Dynamic output section -->
+    <div id="result-container"></div>
   </main>
 
   <footer id="footer"></footer>
