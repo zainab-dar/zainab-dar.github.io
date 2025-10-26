@@ -1,99 +1,111 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("intro-form");
-  const clearButton = document.getElementById("clear-btn");
-  const addCourseBtn = document.getElementById("add-course-btn");
-  const coursesContainer = document.getElementById("courses-container");
-  const resultContainer = document.getElementById("result-container");
-  const resetLink = document.getElementById("reset-link");
+  const output = document.getElementById("result-container");
+  const addCourseBtn = document.getElementById("addCourse"); // matches your HTML
+  const clearBtn = document.getElementById("clear");
+  const coursesContainer = document.getElementById("courses");
 
-  // Prevent form from reloading the page
+  // Prevent page refresh on submit
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    handleSubmit();
+    generateIntroPage();
   });
 
-  // Clear all input fields
-  clearButton.addEventListener("click", function () {
-    Array.from(form.querySelectorAll("input, textarea, select")).forEach(
-      (input) => {
-        input.value = "";
-      }
-    );
-  });
-
-  // Reset to default prefilled values
-  form.addEventListener("reset", function () {
-    // Could reset custom fields or dynamic elements here if needed
-    coursesContainer.innerHTML = ""; // removes any added courses
-  });
-
-  // Add new course fields
-  addCourseBtn.addEventListener("click", function () {
+  // Add new course row
+  addCourseBtn.addEventListener("click", () => {
     const courseDiv = document.createElement("div");
     courseDiv.classList.add("course");
-
     courseDiv.innerHTML = `
-      <input type="text" placeholder="Department (e.g., ITIS)" required />
-      <input type="text" placeholder="Number (e.g., 3135)" required />
-      <input type="text" placeholder="Course Name" required />
-      <input type="text" placeholder="Reason for Taking" />
-      <button type="button" class="delete-course-btn">❌</button>
+      <input type="text" placeholder="Department (e.g., ITIS)" required>
+      <input type="text" placeholder="Course Number (e.g., 3135)" required>
+      <input type="text" placeholder="Course Name" required>
+      <input type="text" placeholder="Reason for Taking" required>
+      <button type="button" class="deleteCourse">Delete</button>
     `;
+    coursesContainer.insertBefore(courseDiv, addCourseBtn);
 
-    coursesContainer.appendChild(courseDiv);
-
-    // Add delete button functionality
-    courseDiv
-      .querySelector(".delete-course-btn")
-      .addEventListener("click", function () {
-        courseDiv.remove();
-      });
+    // Delete button
+    courseDiv.querySelector(".deleteCourse").addEventListener("click", () => {
+      courseDiv.remove();
+    });
   });
 
-  // Handle form submission and display result
-  function handleSubmit() {
-    // Validate required fields
-    const requiredInputs = form.querySelectorAll("[required]");
-    for (let input of requiredInputs) {
-      if (!input.value.trim()) {
-        alert("Please fill out all required fields before submitting.");
-        return;
-      }
+  // Clear button functionality
+  clearBtn.addEventListener("click", () => {
+    form.reset();
+    const inputs = form.querySelectorAll("input, textarea");
+    inputs.forEach((input) => (input.value = ""));
+  });
+
+  // Generate introduction page dynamically
+  function generateIntroPage() {
+    const firstName = document.getElementById("firstName").value;
+    const middleName = document.getElementById("middleName").value;
+    const nickname = document.getElementById("nickname").value;
+    const lastName = document.getElementById("lastName").value;
+    const mascotAdj = document.getElementById("mascotAdj").value;
+    const mascotAnimal = document.getElementById("mascotAnimal").value;
+    const divider = document.getElementById("divider").value;
+    const caption = document.getElementById("caption").value;
+    const personalStatement = document.getElementById("personalStatement").value;
+    const quote = document.getElementById("quote").value;
+    const quoteAuthor = document.getElementById("quoteAuthor").value;
+
+    // Handle uploaded picture
+    const pictureInput = document.getElementById("picture");
+    let imageSrc = "images/default.jpg";
+    if (pictureInput.files && pictureInput.files[0]) {
+      imageSrc = URL.createObjectURL(pictureInput.files[0]);
     }
 
-    // Gather data
-    const formData = new FormData(form);
-    let outputHTML = `
-      <h2>${formData.get("firstName")} ${formData.get("lastName")}</h2>
-      <p><strong>Nickname:</strong> ${formData.get("nickname") || "N/A"}</p>
-      <p><strong>Personal Statement:</strong> ${formData.get("statement")}</p>
-      <h3>Courses</h3>
-      <ul>
+    // Gather all courses
+    const courses = [];
+    document.querySelectorAll(".course").forEach((courseDiv) => {
+      const fields = courseDiv.querySelectorAll("input");
+      courses.push({
+        department: fields[0].value,
+        number: fields[1].value,
+        name: fields[2].value,
+        reason: fields[3].value,
+      });
+    });
+
+    // Generate HTML for courses
+    const coursesHTML = courses
+      .map(
+        (c) =>
+          `<li>${c.department} ${c.number}: ${c.name} — <em>${c.reason}</em></li>`
+      )
+      .join("");
+
+    // Create introduction result
+    output.innerHTML = `
+      <section class="intro-result">
+        <h2>${firstName} ${middleName ? middleName + " " : ""}${lastName}'s Introduction</h2>
+        <h3>${mascotAdj} ${mascotAnimal}</h3>
+        <hr>
+        <p>${personalStatement}</p>
+        <figure>
+          <img src="${imageSrc}" alt="Profile Picture">
+          <figcaption>${caption}</figcaption>
+        </figure>
+        <h4>Courses I'm Taking:</h4>
+        <ul>${coursesHTML}</ul>
+        <blockquote>"${quote}" — ${quoteAuthor}</blockquote>
+        <button id="reset-form-btn">Start Over</button>
+      </section>
     `;
 
-    // Gather all course fields
-    const courseDivs = document.querySelectorAll(".course");
-    courseDivs.forEach((div) => {
-      const inputs = div.querySelectorAll("input");
-      if (inputs[0].value && inputs[1].value && inputs[2].value) {
-        outputHTML += `<li>${inputs[0].value} ${inputs[1].value}: ${inputs[2].value} - ${inputs[3].value || ""}</li>`;
-      }
-    });
-
-    outputHTML += `</ul>`;
-    outputHTML += `<p><em>“${formData.get("quote") || ""}” — ${formData.get("quoteAuthor") || ""}</em></p>`;
-    outputHTML += `<p><strong>Funny Thing:</strong> ${formData.get("funnyThing") || "N/A"}</p>`;
-    outputHTML += `<button id="reset-link">Reset Form</button>`;
-
-    // Replace form with generated content
-    resultContainer.innerHTML = outputHTML;
+    // Hide the form
     form.style.display = "none";
 
-    // Add functionality to reset the form view
-    document.getElementById("reset-link").addEventListener("click", function () {
-      resultContainer.innerHTML = "";
-      form.style.display = "block";
-      form.reset();
-    });
+    // Allow restarting
+    document
+      .getElementById("reset-form-btn")
+      .addEventListener("click", function () {
+        form.reset();
+        form.style.display = "block";
+        output.innerHTML = "";
+      });
   }
 });
