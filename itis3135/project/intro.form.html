@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction Form</title>
+  <link rel="stylesheet" href="styles/default.css">
+  <script src="scripts/introduction.js" defer></script>
+</head>
+<body>
+  <header id="header"></header>
+  
+  <main>
+    <h2>Introduction Form</h2>
+    <h3>Please submit the form below.</h3>
+
+    <form id="introForm">
+      <fieldset>
+        <legend>Basic Info</legend>
+        <label>First Name: <input type="text" id="firstName" value="Zainab" required></label><br>
+        <label>Middle Name: <input type="text" id="middleName" placeholder="Optional"></label><br>
+        <label>Preferred Name: <input type="text" id="nickname" placeholder="Optional"></label><br>
+        <label>Last Name: <input type="text" id="lastName" value="Dar" required></label><br>
+      </fieldset>
+
+      <fieldset>
+        <legend>Mascot Info</legend>
+        <label>Mascot Adjective: <input type="text" id="mascotAdj" value="Clever" required></label><br>
+        <label>Mascot Animal: <input type="text" id="mascotAnimal" value="Panther" required></label><br>
+        <label>Divider: <input type="text" id="divider" value="~" required></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Image</legend>
+        <label>Upload Picture: <input type="file" id="picture" accept="image/*"></label><br>
+        <label>Caption: <input type="text" id="caption" value="This is me!" required></label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Personal Statement</legend>
+        <textarea id="personalStatement" required>Hi, I'm Zainab...</textarea>
+      </fieldset>
+
+      <fieldset id="courses">
+        <legend>Courses</legend>
+        <div class="course">
+          <input type="text" placeholder="Department (e.g., ITIS)" required>
+          <input type="text" placeholder="Course Number (e.g., 3135)" required>
+          <input type="text" placeholder="Course Name" required>
+          <input type="text" placeholder="Reason for Taking" required>
+          <button type="button" class="deleteCourse">Delete</button>
+        </div>
+        <button type="button" id="addCourse">Add Course</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Quote</legend>
+        <label>Quote: <input type="text" id="quote" value="Keep learning." required></label><br>
+        <label>Author: <input type="text" id="quoteAuthor" value="Anonymous" required></label>
+      </fieldset>
+
+      <div class="buttons">
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button" id="clear">Clear</button>
+      </div>
+    </form>
+
+    <div id="output"></div>
+  </main>
+
+  <footer id="footer"></footer>
+</body>
+</html>
