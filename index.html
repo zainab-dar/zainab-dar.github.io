@@ -1,149 +1,181 @@
 <!DOCTYPE html>
-	
 <html lang="en">
-  
 <head>
-	<meta charset = "UTF-8">
-    <title>Personal Webpage | UNC Charlotte</title>
-  
-  <style type="text/css">
-  body {
-    font-family: "Times New Roman", sans-serif;
-    background-color: #f5f0e6; /* light beige background for the main content */
-    margin: 0px;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* keep footer at the bottom */
+  <meta charset="UTF-8">
+  <title>Zainab Dar | Personal Webpage</title>
+
+  <style>
+    /* ===== COLOR PALETTE =====
+       Blush Rose: #e3b7a0
+       Warm Cream: #fdf8f5
+       Deep Charcoal: #2b2b2b
+       Muted Taupe: #6b5b59
+       Accent Pink: #f4cfc2
+    ========================== */
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fdf8f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #2b2b2b;
     }
 
-  #header-wrapper {
-    background-color: #cfa5a0; /* muted pink for header */
-    padding: 20px 0;
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #e3b7a0, #f4cfc2);
+      color: #ffffff;
+      text-align: center;
+      padding: 60px 20px 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
-  h1 {
-    color: #ffffff; /* text color for header */
-    text-align: center;
-    margin: 0.5em 0;
+    h1 {
+      font-size: 2.8em;
+      margin: 0;
+      letter-spacing: 1px;
+      font-weight: 700;
     }
 
-	h2{
-		color: #b87770;
-		text-align: center;
-	  }
+    h2 {
+      color: #e3b7a0;
+      text-align: center;
+      font-size: 1.8em;
+      margin: 40px 0 20px;
+      font-weight: 600;
+    }
 
- 
-  p {
-    color: #3b3b3b; /* dark gray for readability */
-    font-size: 17px;
-    line-height: 1.6;
-    max-width: 700px;       /* limit width of paragraphs */
-    margin: 1em auto;       /* center horizontally */
-    padding: 0 20px;        /* small side padding */
-    text-align: left;       /* keep clean paragraph style */
-  }
+    /* MAIN CONTENT */
+    #content-wrapper {
+      background-color: #ffffff;
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto 60px;
+      padding: 40px 50px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      line-height: 1.8;
+    }
 
-  a {
-      color: #6b4f4f; /* muted brown color for my links */
+    p {
+      font-size: 17px;
+      margin: 1.5em 0;
+      color: #2b2b2b;
+    }
+
+    strong {
+      color: #6b5b59;
+    }
+
+    /* LINKS */
+    a {
+      color: #e3b7a0;
+      font-weight: 600;
       text-decoration: none;
-      margin: 0 5px;
+      transition: all 0.3s ease;
     }
 
-  a:hover {
-      color: #cfa5a0; /* match header pink on hover */
+    a:hover {
+      color: #b8876a;
       text-decoration: underline;
     }
 
-  .highlight {
-    background-color: #ffffff;
-    padding: 5px;
+    /* FOOTER */
+    footer {
+      background-color: #2b2b2b;
+      color: #fdf8f5;
+      padding: 25px 0;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
     }
 
-  #content-wrapper {
-    background-color: #f5f0e6; /* match body beige for content */
-    padding: 20px 0;
-    flex: 1; /* makes content expand to push footer to bottom */
+    .footer-nav nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
     }
-  
-	footer {
-		background-color: #cfa5a0;  /* your muted pink */
-		padding: 15px 0;
-	}
-  .footer-nav nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px; /* space between items */
-  }
 
-  .footer-nav a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    position: relative;
-    padding: 0 15px; 
-  }
+    .footer-nav a {
+      color: #fdf8f5;
+      font-weight: 500;
+      font-size: 16px;
+      position: relative;
+      padding: 0 8px;
+    }
 
-  .footer-nav a::before,
-  .footer-nav a::after {
-    content: "|";
-    color: white;
-    position: absolute;
-  }
+    .footer-nav a:not(:last-child)::after {
+      content: "|";
+      color: rgba(255, 255, 255, 0.6);
+      margin-left: 14px;
+    }
 
-  .footer-nav a::before {
-    left: 0;
-  }
+    /* HOVER EFFECT ON FOOTER LINKS */
+    .footer-nav a:hover {
+      color: #e3b7a0;
+    }
 
-  .footer-nav a::after {
-    right: 0;
-  }
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2em;
+      }
 
+      #content-wrapper {
+        padding: 25px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .footer-nav a {
+        font-size: 15px;
+      }
+    }
   </style>
-  
-  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-  </head>
-  
-  <body>
-    <header id="header-wrapper">
-      <h1>Zainab Dar</h1>
-    </header>
 
-    <main>
-      <h2>WELCOME</h2>
-      <div id="content-wrapper">
-        <p>
-          Hi, my name is Zainab Dar, I am a Junior at UNC Charlotte, majoring in
-          Computer Science with a concentration in Information Technology. In my free time I enjoy
-          hanging out with my friends, shopping, trying new cafes and baking cakes!
-        </p>
-        <p>
-          On this page you will find links to my github, charlotte webpage, my
-          itis3135 course page and my linkedin accounts. I will be adding more to
-          this website so stay tuned!
-        </p>
-      </div>
-      
-    </main>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
-    <footer>
-	<div class = "footer-nav">
-    <nav>
-       	
+<body>
+  <header>
+    <h1>Zainab Dar</h1>
+  </header>
 
-      
-		<a href="https://zainab-dar.github.io/itis3135/">itis3135.io</a>
-        
-    <a href="https://www.freecodecamp.org/zainabdar">freeCodeCamp</a>
-        
-    <a href="https://www.codecademy.com/profiles/zainab_dar">Codeacademy</a>
-        
-    <a href="https://www.linkedin.com/in/zainab-dar-630153286/">LinkedIn</a>
-    
-    <a href="./itis3135/dozephin-site/about.html">Dozephin</a>
-    </nav>
-  </div>
-	</footer>
-  </body>
+  <main>
+    <h2>WELCOME</h2>
+    <div id="content-wrapper">
+      <p>
+        Hi, my name is <strong>Zainab Dar</strong>. I am a Junior at UNC Charlotte,
+        majoring in Computer Science with a concentration in Information Technology.
+        In my free time, I enjoy hanging out with friends, shopping, trying new cafes,
+        and baking cakes!
+      </p>
+      <p>
+        On this page, you’ll find links to my GitHub, Charlotte webpage,
+        ITIS 3135 course page, and my LinkedIn profile.
+        I’ll be adding more to this site soon — stay tuned!
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-nav">
+      <nav>
+        <a href="https://zainab-dar.github.io/itis3135/">itis3135.io</a>
+        <a href="https://www.freecodecamp.org/zainabdar">freeCodeCamp</a>
+        <a href="https://www.codecademy.com/profiles/zainab_dar">Codeacademy</a>
+        <a href="https://www.linkedin.com/in/zainab-dar-630153286/">LinkedIn</a>
+        <a href="./itis3135/dozephin-site/about.html">Dozephin</a>
+      </nav>
+    </div>
+  </footer>
+</body>
 </html>
