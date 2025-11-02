@@ -1,74 +1,65 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("intro-form");
-  const heading = document.querySelector("h2");
   const generateBtn = document.getElementById("generateJsonBtn");
-  const addCourseBtn = document.getElementById("add-course-btn");
-  const coursesContainer = document.getElementById("courses-container");
-
-  addCourseBtn.addEventListener("click", () => {
-    const newCourse = document.createElement("div");
-    newCourse.classList.add("course");
-    newCourse.innerHTML = `
-      <input type="text" placeholder="Department (e.g., ITIS)" required>
-      <input type="text" placeholder="Course Number (e.g., 3135)" required>
-      <input type="text" placeholder="Course Name" required>
-      <input type="text" placeholder="Reason for Taking" required>
-      <button type="button" class="deleteCourse">Delete</button>
-    `;
-    coursesContainer.insertBefore(newCourse, addCourseBtn);
-  });
-
-  coursesContainer.addEventListener("click", (e) => {
-    if (e.target.classList.contains("deleteCourse")) {
-      e.target.parentElement.remove();
-    }
-  });
+  const resultContainer = document.getElementById("result-container");
+  const form = document.getElementById("intro-form");
 
   generateBtn.addEventListener("click", () => {
+    // Collect data from form
     const data = {
       firstName: document.getElementById("firstName").value,
-      preferredName: document.getElementById("nickname").value,
-      middleInitial: document.getElementById("middleName").value,
+      middleName: document.getElementById("middleName").value || "",
+      preferredName: document.getElementById("nickname").value || "",
       lastName: document.getElementById("lastName").value,
-      divider: document.getElementById("divider").value,
       mascotAdjective: document.getElementById("mascotAdj").value,
       mascotAnimal: document.getElementById("mascotAnimal").value,
-      image: document.getElementById("picture").value || "images/placeholder.jpg",
+      divider: document.getElementById("divider").value,
+      image: getImageFile(),
       imageCaption: document.getElementById("caption").value,
       personalStatement: document.getElementById("personalStatement").value,
-      personalBackground: "N/A",
-      professionalBackground: "N/A",
-      academicBackground: "N/A",
-      subjectBackground: "N/A",
-      primaryComputer: "N/A",
-      courses: [],
-      links: [],
+      courses: getCourses(),
       quote: document.getElementById("quote").value,
-      quoteAuthor: document.getElementById("quoteAuthor").value
+      quoteAuthor: document.getElementById("quoteAuthor").value,
+      generatedDate: new Date().toLocaleString()
     };
 
-    const courseDivs = document.querySelectorAll(".course");
-    courseDivs.forEach(course =>) {
-      const inputs = course.querySelectorAll("input");
-      if (inputs.length >= 4) {
-        data.courses.push({
-          department: inputs[0].value,
-          number: inputs[1].value,
-          name: inputs[2].value,
-          reason: inputs[3].value
-        });
-      }
-    };
-
+    // Convert to JSON string with indentation
     const jsonText = JSON.stringify(data, null, 2);
 
-    heading.textContent = "Introduction JSON";
-    form.innerHTML = `
-      <section>
+    // Display formatted JSON
+    resultContainer.innerHTML = `
+      <section class="json-output">
+        <h2>Generated Introduction JSON</h2>
         <pre><code class="language-json">${jsonText}</code></pre>
       </section>
     `;
 
+    // Highlight JSON syntax
     hljs.highlightAll();
   });
+
+  // Helper: handle image input
+  function getImageFile() {
+    const pictureInput = document.getElementById("picture");
+    if (pictureInput.files && pictureInput.files[0]) {
+      return pictureInput.files[0].name;
+    }
+    return "images/default.jpg";
+  }
+
+  // Helper: gather courses into array
+  function getCourses() {
+    const courses = [];
+    document.querySelectorAll(".course").forEach((courseDiv) => {
+      const fields = courseDiv.querySelectorAll("input");
+      if (fields.length >= 4) {
+        courses.push({
+          department: fields[0].value,
+          number: fields[1].value,
+          name: fields[2].value,
+          reason: fields[3].value
+        });
+      }
+    });
+    return courses;
+  }
 });
