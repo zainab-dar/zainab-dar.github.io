@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         department: fields[0].value,
         number: fields[1].value,
         name: fields[2].value,
-        reason: fields[3].value,
+        reason: fields[3].value
       });
     });
 
