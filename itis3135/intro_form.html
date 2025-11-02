@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Introduction Form</title>
@@ -31,20 +37,18 @@
         <input type="text" id="lastName" name="lastName" value="Dar" required><br>
       </fieldset>
 
-      <!-- Mascot Info -->
       <fieldset>
         <legend>Mascot Info</legend>
         <label for="mascotAdj">Mascot Adjective:</label>
-        <input type="text" id="mascotAdj" name="mascotAdj" value="Clever" required><br>
+        <input type="text" id="mascotAdj" name="mascotAdj" value="Zen" required><br>
 
         <label for="mascotAnimal">Mascot Animal:</label>
-        <input type="text" id="mascotAnimal" name="mascotAnimal" value="Panther" required><br>
+        <input type="text" id="mascotAnimal" name="mascotAnimal" value="Dolphin" required><br>
 
         <label for="divider">Divider:</label>
-        <input type="text" id="divider" name="divider" value="~" required>
+        <input type="text" id="divider" name="divider" value="|" required>
       </fieldset>
 
-      <!-- Image -->
       <fieldset>
         <legend>Image</legend>
         <label for="picture">Upload Picture:</label>
@@ -54,14 +58,12 @@
         <input type="text" id="caption" name="caption" value="This is me!" required>
       </fieldset>
 
-      <!-- Personal Statement -->
       <fieldset>
         <legend>Personal Statement</legend>
         <label for="personalStatement">Tell us about yourself:</label><br>
         <textarea id="personalStatement" name="personalStatement" required>Hi, I'm Zainab...</textarea>
       </fieldset>
 
-      <!-- Courses -->
       <fieldset id="courses-container">
         <legend>Courses</legend>
         <div class="course">
@@ -72,10 +74,10 @@
           <button type="button" class="deleteCourse">Delete</button>
         </div>
           <button type="button" id="add-course-btn">Add Course</button>
-    
+          <button type="button" id="generateJsonBtn">Generate JSON</button>
+
       </fieldset>
 
-      <!-- Quote -->
       <fieldset>
         <legend>Quote</legend>
         <label for="quote">Quote:</label>
@@ -85,7 +87,6 @@
         <input type="text" id="quoteAuthor" name="quoteAuthor" value="Anonymous" required>
       </fieldset>
 
-      <!-- Buttons -->
       <div class="buttons">
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>
@@ -93,10 +94,11 @@
       </div>
     </form>
 
-    <!-- Dynamic output section -->
     <div id="result-container"></div>
   </main>
+  <script src="generate_json.js"></script>
 
-  <footer id="footer"></footer>
 </body>
+  <footer id="footer"></footer>
+
 </html>
