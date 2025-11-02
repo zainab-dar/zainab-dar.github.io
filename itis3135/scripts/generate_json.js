@@ -1,62 +1,74 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const button = document.getElementById("generateJsonBtn");
-  const form = document.querySelector("form");
+  const form = document.getElementById("intro-form");
   const heading = document.querySelector("h2");
+  const generateBtn = document.getElementById("generateJsonBtn");
+  const addCourseBtn = document.getElementById("add-course-btn");
+  const coursesContainer = document.getElementById("courses-container");
 
-  button.addEventListener("click", () => {
-    // Collect data from form fields
+  // ✅ 1. Add Course button logic
+  addCourseBtn.addEventListener("click", () => {
+    const newCourse = document.createElement("div");
+    newCourse.classList.add("course");
+    newCourse.innerHTML = `
+      <input type="text" placeholder="Department (e.g., ITIS)" required>
+      <input type="text" placeholder="Course Number (e.g., 3135)" required>
+      <input type="text" placeholder="Course Name" required>
+      <input type="text" placeholder="Reason for Taking" required>
+      <button type="button" class="deleteCourse">Delete</button>
+    `;
+    coursesContainer.insertBefore(newCourse, addCourseBtn);
+  });
+
+  // ✅ 2. Delete Course button logic (use event delegation)
+  coursesContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("deleteCourse")) {
+      e.target.parentElement.remove();
+    }
+  });
+
+  // ✅ 3. Generate JSON button logic
+  generateBtn.addEventListener("click", () => {
+    // Collect form values
     const data = {
       firstName: document.getElementById("firstName").value,
-      preferredName: document.getElementById("preferredName").value,
-      middleInitial: document.getElementById("middleInitial").value,
+      preferredName: document.getElementById("nickname").value,
+      middleInitial: document.getElementById("middleName").value,
       lastName: document.getElementById("lastName").value,
       divider: document.getElementById("divider").value,
-      mascotAdjective: document.getElementById("mascotAdjective").value,
+      mascotAdjective: document.getElementById("mascotAdj").value,
       mascotAnimal: document.getElementById("mascotAnimal").value,
-      image: document.getElementById("image").value,
-      imageCaption: document.getElementById("imageCaption").value,
+      image: document.getElementById("picture").value || "images/placeholder.jpg",
+      imageCaption: document.getElementById("caption").value,
       personalStatement: document.getElementById("personalStatement").value,
-      personalBackground: document.getElementById("personalBackground").value,
-      professionalBackground: document.getElementById("professionalBackground").value,
-      academicBackground: document.getElementById("academicBackground").value,
-      subjectBackground: document.getElementById("subjectBackground").value,
-      primaryComputer: document.getElementById("primaryComputer").value,
+      personalBackground: "N/A",
+      professionalBackground: "N/A",
+      academicBackground: "N/A",
+      subjectBackground: "N/A",
+      primaryComputer: "N/A",
       courses: [],
-      links: []
+      links: [],
+      quote: document.getElementById("quote").value,
+      quoteAuthor: document.getElementById("quoteAuthor").value
     };
 
-    // Collect courses
-    const courseRows = document.querySelectorAll(".course-row");
-    courseRows.forEach(row => {
-      const dept = row.querySelector(".course-dept").value;
-      const num = row.querySelector(".course-num").value;
-      const name = row.querySelector(".course-name").value;
-      const reason = row.querySelector(".course-reason").value;
-
-      data.courses.push({
-        department: dept,
-        number: num,
-        name: name,
-        reason: reason
-      });
+    // Get all course data
+    const courseDivs = document.querySelectorAll(".course");
+    courseDivs.forEach(course => {
+      const inputs = course.querySelectorAll("input");
+      if (inputs.length >= 4) {
+        data.courses.push({
+          department: inputs[0].value,
+          number: inputs[1].value,
+          name: inputs[2].value,
+          reason: inputs[3].value
+        });
+      }
     });
 
-    // Collect links
-    const linkRows = document.querySelectorAll(".link-row");
-    linkRows.forEach(row => {
-      const name = row.querySelector(".link-name").value;
-      const href = row.querySelector(".link-href").value;
-
-      data.links.push({
-        name: name,
-        href: href
-      });
-    });
-
-    // Convert to pretty JSON text
+    // Convert to formatted JSON text
     const jsonText = JSON.stringify(data, null, 2);
 
-    // Replace form content with formatted JSON
+    // Replace form content with JSON output
     heading.textContent = "Introduction JSON";
     form.innerHTML = `
       <section>
@@ -64,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       </section>
     `;
 
-    // Highlight syntax
+    // Highlight the new JSON code
     hljs.highlightAll();
   });
 });
