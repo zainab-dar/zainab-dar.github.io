@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Prevent page refresh on submit
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    generateIntroPage();
   });
 
   // Add new course row
