@@ -3,8 +3,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultContainer = document.getElementById("result-container");
   const form = document.getElementById("intro-form");
 
+
+  function getImageFile() {
+    const pictureInput = document.getElementById("picture");
+    if (pictureInput.files && pictureInput.files[0]) {
+      return pictureInput.files[0].name;
+    }
+    return "images/default.jpg";
+  }
+
+  function getCourses() {
+    const courses = [];
+    document.querySelectorAll(".course").forEach((courseDiv) => {
+      const fields = courseDiv.querySelectorAll("input");
+      if (fields.length >= 4) {
+        courses.push({
+          department: fields[0].value,
+          number: fields[1].value,
+          name: fields[2].value,
+          reason: fields[3].value
+        });
+      }
+    });
+    return courses;
+  }
+});
+
   generateBtn.addEventListener("click", () => {
-    // Collect data from form
     const data = {
       firstName: document.getElementById("firstName").value,
       middleName: document.getElementById("middleName").value || "",
@@ -36,30 +61,3 @@ document.addEventListener("DOMContentLoaded", () => {
     // Highlight JSON syntax
     hljs.highlightAll();
   });
-
-  // Helper: handle image input
-  function getImageFile() {
-    const pictureInput = document.getElementById("picture");
-    if (pictureInput.files && pictureInput.files[0]) {
-      return pictureInput.files[0].name;
-    }
-    return "images/default.jpg";
-  }
-
-  // Helper: gather courses into array
-  function getCourses() {
-    const courses = [];
-    document.querySelectorAll(".course").forEach((courseDiv) => {
-      const fields = courseDiv.querySelectorAll("input");
-      if (fields.length >= 4) {
-        courses.push({
-          department: fields[0].value,
-          number: fields[1].value,
-          name: fields[2].value,
-          reason: fields[3].value
-        });
-      }
-    });
-    return courses;
-  }
-});
