@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Get all course data
     const courseDivs = document.querySelectorAll(".course");
-    courseDivs.forEach(course => {
+    courseDivs.forEach(course =>) {
       const inputs = course.querySelectorAll("input");
       if (inputs.length >= 4) {
         data.courses.push({
@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
           reason: inputs[3].value
         });
       }
-    });
+    };
 
     // Convert to formatted JSON text
     const jsonText = JSON.stringify(data, null, 2);
