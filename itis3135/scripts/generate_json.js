@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const addCourseBtn = document.getElementById("add-course-btn");
   const coursesContainer = document.getElementById("courses-container");
 
-  // ✅ 1. Add Course button logic
   addCourseBtn.addEventListener("click", () => {
     const newCourse = document.createElement("div");
     newCourse.classList.add("course");
@@ -19,16 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     coursesContainer.insertBefore(newCourse, addCourseBtn);
   });
 
-  // ✅ 2. Delete Course button logic (use event delegation)
   coursesContainer.addEventListener("click", (e) => {
     if (e.target.classList.contains("deleteCourse")) {
       e.target.parentElement.remove();
     }
   });
 
-  // ✅ 3. Generate JSON button logic
   generateBtn.addEventListener("click", () => {
-    // Collect form values
     const data = {
       firstName: document.getElementById("firstName").value,
       preferredName: document.getElementById("nickname").value,
@@ -51,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
       quoteAuthor: document.getElementById("quoteAuthor").value
     };
 
-    // Get all course data
     const courseDivs = document.querySelectorAll(".course");
     courseDivs.forEach(course =>) {
       const inputs = course.querySelectorAll("input");
@@ -65,10 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    // Convert to formatted JSON text
     const jsonText = JSON.stringify(data, null, 2);
 
-    // Replace form content with JSON output
     heading.textContent = "Introduction JSON";
     form.innerHTML = `
       <section>
@@ -76,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </section>
     `;
 
-    // Highlight the new JSON code
     hljs.highlightAll();
   });
 });

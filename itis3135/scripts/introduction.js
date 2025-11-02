@@ -1,16 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("intro-form");
   const output = document.getElementById("result-container");
-  const addCourseBtn = document.getElementById("addCourse"); // matches your HTML
+  const addCourseBtn = document.getElementById("addCourse"); 
   const clearBtn = document.getElementById("clear");
   const coursesContainer = document.getElementById("courses");
 
-  // Prevent page refresh on submit
   form.addEventListener("submit", function (e) {
     e.preventDefault();
   });
 
-  // Add new course row
   addCourseBtn.addEventListener("click", () => {
     const courseDiv = document.createElement("div");
     courseDiv.classList.add("course");
@@ -23,20 +21,17 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     coursesContainer.insertBefore(courseDiv, addCourseBtn);
 
-    // Delete button
     courseDiv.querySelector(".deleteCourse").addEventListener("click", () => {
       courseDiv.remove();
     });
   });
 
-  // Clear button functionality
   clearBtn.addEventListener("click", () => {
     form.reset();
     const inputs = form.querySelectorAll("input, textarea");
     inputs.forEach((input) => (input.value = ""));
   });
 
-  // Generate introduction page dynamically
   function generateIntroPage() {
     const firstName = document.getElementById("firstName").value;
     const middleName = document.getElementById("middleName").value;
@@ -50,14 +45,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const quote = document.getElementById("quote").value;
     const quoteAuthor = document.getElementById("quoteAuthor").value;
 
-    // Handle uploaded picture
     const pictureInput = document.getElementById("picture");
     let imageSrc = "images/default.jpg";
     if (pictureInput.files && pictureInput.files[0]) {
       imageSrc = URL.createObjectURL(pictureInput.files[0]);
     }
 
-    // Gather all courses
     const courses = [];
     document.querySelectorAll(".course").forEach((courseDiv) => {
       const fields = courseDiv.querySelectorAll("input");
@@ -69,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // Generate HTML for courses
     const coursesHTML = courses
       .map(
         (c) =>
@@ -77,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
       )
       .join("");
 
-    // Create introduction result
     output.innerHTML = `
       <section class="intro-result">
         <h2>${firstName} ${middleName ? middleName + " " : ""}${lastName}'s Introduction</h2>
@@ -95,10 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
       </section>
     `;
 
-    // Hide the form
     form.style.display = "none";
 
-    // Allow restarting
     document
       .getElementById("reset-form-btn")
       .addEventListener("click", function () {
