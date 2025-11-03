@@ -1,63 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
   const generateBtn = document.getElementById("generateJsonBtn");
-  const resultContainer = document.getElementById("result-container");
+  const addCourseBtn = document.getElementById("add-course-btn");
+  const coursesContainer = document.getElementById("courses-container");
   const form = document.getElementById("intro-form");
+  const heading = document.querySelector("h2");
 
+  addCourseBtn.addEventListener("click", () => {
+    const newCourse = document.createElement("div");
+    newCourse.classList.add("course");
+    newCourse.innerHTML = `
+      <input type="text" placeholder="Department (e.g., ITIS)" required>
+      <input type="text" placeholder="Course Number (e.g., 3135)" required>
+      <input type="text" placeholder="Course Name" required>
+      <input type="text" placeholder="Reason for Taking" required>
+      <button type="button" class="deleteCourse">Delete</button>
+    `;
+    coursesContainer.insertBefore(newCourse, addCourseBtn);
+  });
 
-  function getImageFile() {
-    const pictureInput = document.getElementById("picture");
-    if (pictureInput.files && pictureInput.files[0]) {
-      return pictureInput.files[0].name;
+  coursesContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("deleteCourse")) {
+      e.target.parentElement.remove();
     }
-    return "images/default.jpg";
-  }
-
-  function getCourses() {
-    const courses = [];
-    document.querySelectorAll(".course").forEach((courseDiv) => {
-      const fields = courseDiv.querySelectorAll("input");
-      if (fields.length >= 4) {
-        courses.push({
-          department: fields[0].value,
-          number: fields[1].value,
-          name: fields[2].value,
-          reason: fields[3].value
-        });
-      }
-    });
-    return courses;
-  }
-});
+  });
 
   generateBtn.addEventListener("click", () => {
     const data = {
       firstName: document.getElementById("firstName").value,
-      middleName: document.getElementById("middleName").value || "",
-      preferredName: document.getElementById("nickname").value || "",
       lastName: document.getElementById("lastName").value,
       mascotAdjective: document.getElementById("mascotAdj").value,
       mascotAnimal: document.getElementById("mascotAnimal").value,
-      divider: document.getElementById("divider").value,
-      image: getImageFile(),
-      imageCaption: document.getElementById("caption").value,
       personalStatement: document.getElementById("personalStatement").value,
-      courses: getCourses(),
-      quote: document.getElementById("quote").value,
-      quoteAuthor: document.getElementById("quoteAuthor").value,
-      generatedDate: new Date().toLocaleString()
+      courses: [],
     };
 
-    // Convert to JSON string with indentation
-    const jsonText = JSON.stringify(data, null, 2);
+    document.querySelectorAll(".course").forEach(course => {
+      const inputs = course.querySelectorAll("input");
+      if (inputs.length >= 4) {
+        data.courses.push({
+          department: inputs[0].value,
+          number: inputs[1].value,
+          name: inputs[2].value,
+          reason: inputs[3].value
+        });
+      }
+    });
 
-    // Display formatted JSON
-    resultContainer.innerHTML = `
-      <section class="json-output">
-        <h2>Generated Introduction JSON</h2>
+    const jsonText = JSON.stringify(data, null, 2);
+    heading.textContent = "Introduction JSON";
+    form.innerHTML = `
+      <section>
         <pre><code class="language-json">${jsonText}</code></pre>
       </section>
     `;
-
-    // Highlight JSON syntax
     hljs.highlightAll();
   });
+});
