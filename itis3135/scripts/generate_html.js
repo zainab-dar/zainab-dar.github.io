@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const generateHtmlBtn = document.getElementById("generateHtmlBtn");
 
   generateHtmlBtn.addEventListener("click", () => {
-    // Collect the form data (you can adjust these IDs to match yours)
     const name = document.getElementById("name").value.trim();
     const mascot = document.getElementById("mascot").value.trim();
     const imageSrc = document.getElementById("image").value.trim();
@@ -15,19 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const computerPlatform = document.getElementById("computerPlatform").value.trim();
     const courses = document.querySelectorAll(".course");
 
-    // Build the inner list items for courses
-    let courseList = "";
-    courses.forEach(course => {
-      const inputs = course.querySelectorAll("input");
-      if (inputs.length >= 4) {
-        courseList += `
-        <li>
-          <strong>${inputs[0].value} ${inputs[1].value}:</strong> ${inputs[2].value} — ${inputs[3].value}
-        </li>`;
-      }
+   let courseList = "";
+
+    courses.forEach((course) => {
+    const inputs = course.querySelectorAll("input");
+    if (inputs.length >= 4) {
+        courseList +=
+        `<li><strong>${inputs[0].value} ${inputs[1].value}:</strong> ` +
+        `${inputs[2].value} — ${inputs[3].value}</li>\n`;
+    }
     });
 
-    // Create the HTML structure for the introduction
     const htmlOutput = `
 <h2>Introduction HTML</h2>
 <h3>${name} ★ ${mascot}</h3>
@@ -47,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </ul>
   </li>
 </ul>
-`;
+;
 
     // Replace the form content
     const formSection = document.getElementById("intro-form-section");
