@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const generateHtmlBtn = document.getElementById("generateHtmlBtn");
 
+  if (!generateHtmlBtn) {
+    console.error("Generate HTML button not found!");
+    return;
+  }
+
   generateHtmlBtn.addEventListener("click", () => {
     const name = document.getElementById("name").value.trim();
     const mascot = document.getElementById("mascot").value.trim();
@@ -14,15 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const computerPlatform = document.getElementById("computerPlatform").value.trim();
     const courses = document.querySelectorAll(".course");
 
-   let courseList = "";
+    let courseList = "";
 
     courses.forEach((course) => {
-    const inputs = course.querySelectorAll("input");
-    if (inputs.length >= 4) {
+      const inputs = course.querySelectorAll("input");
+      if (inputs.length >= 4) {
         courseList +=
-        `<li><strong>${inputs[0].value} ${inputs[1].value}:</strong> ` +
-        `${inputs[2].value} — ${inputs[3].value}</li>\n`;
-    }
+          `<li><strong>${inputs[0].value} ${inputs[1].value}:</strong> ` +
+          `${inputs[2].value} — ${inputs[3].value}</li>\n`;
+      }
     });
 
     const htmlOutput = `
@@ -44,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </ul>
   </li>
 </ul>
-;
+`;
 
     // Replace the form content
     const formSection = document.getElementById("intro-form-section");
