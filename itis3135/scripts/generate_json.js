@@ -17,6 +17,24 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
     coursesContainer.insertBefore(newCourse, addCourseBtn);
   });
+  if (addCourseBtn && coursesContainer) {
+    addCourseBtn.addEventListener("click", () => {
+      const courseDiv = document.createElement("div");
+      courseDiv.classList.add("course");
+
+      courseDiv.innerHTML = `
+        <input type="text" placeholder="Department (e.g., ITIS)" required>
+        <input type="text" placeholder="Course Number (e.g., 3135)" required>
+        <input type="text" placeholder="Course Name" required>
+        <input type="text" placeholder="Reason for Taking" required>
+        <button type="button" class="deleteCourse">Delete</button>
+      `;
+
+      // Insert before button, if container contains it
+      coursesContainer.insertBefore(courseDiv, addCourseBtn);
+    });
+  }
+
 
   coursesContainer.addEventListener("click", (e) => {
     if (e.target.classList.contains("deleteCourse")) {
@@ -33,18 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
       personalStatement: document.getElementById("personalStatement").value,
       courses: []
     };
-
-    document.querySelectorAll(".course").forEach((course) => {
-    const inputs = course.querySelectorAll("input");
-    if (inputs.length >= 4) {
-        data.courses.push({
-        department: inputs[0].value,
-        number: inputs[1].value,
-        name: inputs[2].value,
-        reason: inputs[3].value
-        });
-    }
-    });
 
     const jsonText = JSON.stringify(data, null, 2);
     heading.textContent = "Introduction JSON";
