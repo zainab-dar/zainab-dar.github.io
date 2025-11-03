@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("intro-form");
   const output = document.getElementById("result-container");
-  const addCourseBtn = document.getElementById("addCourse"); 
   const clearBtn = document.getElementById("clear");
-  const coursesContainer = document.getElementById("courses");
+  const addCourseBtn = document.getElementById("add-course-btn");
+  const coursesContainer = document.getElementById("courses-container");
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
