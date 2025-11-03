@@ -5,7 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     console.error("Generate HTML button not found!");
     return;
   }
-
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+});
   generateHtmlBtn.addEventListener("click", () => {
     const name = document.getElementById("name").value.trim();
     const mascot = document.getElementById("mascot").value.trim();
@@ -31,27 +37,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const htmlOutput = `
-<h2>Introduction HTML</h2>
-<h3>${name} ★ ${mascot}</h3>
-<figure>
-  <img src="${imageSrc}" alt="${imageAlt}">
-  <figcaption>${caption}</figcaption>
-</figure>
-<ul>
-  <li><strong>Personal Background:</strong> ${personalBackground}</li>
-  <li><strong>Professional Background:</strong> ${professionalBackground}</li>
-  <li><strong>Academic Background:</strong> ${academicBackground}</li>
-  <li><strong>Web Development Background:</strong> ${webDevBackground}</li>
-  <li><strong>Computer Platform:</strong> ${computerPlatform}</li>
-  <li><strong>Courses:</strong>
-    <ul>
+        <h2>Introduction HTML</h2>
+        <h3>${name} ★ ${mascot}</h3>
+        <figure>
+        <img src="${imageSrc}" alt="${imageAlt}">
+        <figcaption>${caption}</figcaption>
+        </figure>
+        <ul>
+        <li><strong>Personal Background:</strong> ${personalBackground}</li>
+        <li><strong>Professional Background:</strong> ${professionalBackground}</li>
+        <li><strong>Academic Background:</strong> ${academicBackground}</li>
+        <li><strong>Web Development Background:</strong> ${webDevBackground}</li>
+        <li><strong>Computer Platform:</strong> ${computerPlatform}</li>
+        <li><strong>Courses:</strong>
+            <ul>
       ${courseList}
     </ul>
   </li>
 </ul>
 `;
 
-    // Replace the form content
     const formSection = document.getElementById("intro-form-section");
     formSection.innerHTML = `
       <h2>Introduction HTML</h2>
@@ -60,15 +65,6 @@ document.addEventListener("DOMContentLoaded", () => {
       </section>
     `;
 
-    // Re-run syntax highlighting
     hljs.highlightAll();
   });
 
-  // Function to escape HTML characters so they render as code
-  function escapeHtml(str) {
-    return str
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;");
-  }
-});
