@@ -31,19 +31,19 @@ document.addEventListener("DOMContentLoaded", () => {
       mascotAdjective: document.getElementById("mascotAdj").value,
       mascotAnimal: document.getElementById("mascotAnimal").value,
       personalStatement: document.getElementById("personalStatement").value,
-      courses: [],
+      courses: []
     };
 
-    document.querySelectorAll(".course").forEach(course => {
-      const inputs = course.querySelectorAll("input");
-      if (inputs.length >= 4) {
+    document.querySelectorAll(".course").forEach((course) => {
+    const inputs = course.querySelectorAll("input");
+    if (inputs.length >= 4) {
         data.courses.push({
-          department: inputs[0].value,
-          number: inputs[1].value,
-          name: inputs[2].value,
-          reason: inputs[3].value
+        department: inputs[0].value,
+        number: inputs[1].value,
+        name: inputs[2].value,
+        reason: inputs[3].value
         });
-      }
+    }
     });
 
     const jsonText = JSON.stringify(data, null, 2);
