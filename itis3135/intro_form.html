@@ -66,13 +66,16 @@
         <textarea id="personalStatement" name="personalStatement" required>Hi, I'm Zainab...</textarea>
       </fieldset>
 
-     <fieldset id="courses-container">
-      <legend>Courses</legend>
-      <div class="course"> ... </div>
-      <button type="button" id="add-course-btn">Add Course</button>
-      <button type="button" id="generateJsonBtn">Generate JSON</button>
-     </fieldset>
-
+    <div id="coursesContainer">
+        <div class="course">
+          <input type="text" placeholder="Department (e.g., ITIS)" required>
+          <input type="text" placeholder="Course Number (e.g., 3135)" required>
+          <input type="text" placeholder="Course Name" required>
+          <input type="text" placeholder="Reason for Taking" required>
+          <button type="button" class="deleteCourse">Delete</button>
+        </div>
+        <button type="button" id="addCourseBtn">Add Course</button>
+        </div>
 
       <fieldset>
         <legend>Quote</legend>
@@ -87,6 +90,7 @@
         <button type="submit">Submit</button>
         <button type="reset">Reset</button>
         <button type="button" id="clear">Clear</button>
+        <button type="button" id="generateJsonBtn">Generate JSON</button>
         <button type="button" id="generateHtmlBtn">Generate HTML</button>
         <button type="button" class="deleteCourse">Delete</button>
       </div>
