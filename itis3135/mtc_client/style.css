@@ -132,8 +132,7 @@ button:hover {
   margin-bottom: 5px; 
 }
 
-.section-card h2, 
-.section-card h3 {
+h2, h3 {
   margin-top: 0;
   color: #006400; 
 }
