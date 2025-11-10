@@ -132,7 +132,7 @@ h2, h3 {
   color: #006400; 
 }
 
-header a.logo-img-link img {
+.circle-logo-img-link img {
   float: left; 
   margin-right: 15px;
   width: 180px;      
