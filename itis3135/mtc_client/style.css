@@ -108,3 +108,33 @@ button:hover {
   display: block; 
   margin: 0 auto; 
 }
+/* Section container to create a floating card effect */
+.section-card {
+  background-color: #F0F8FF; 
+  border: 2px solid #006400; 
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 800px;
+  text-align: left; 
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); 
+}
+
+/* Bullet points inside the card */
+.section-card ul {
+  padding-left: 20px; 
+  margin-top: 10px;
+  margin-bottom: 10px;
+  list-style-type: disc;
+}
+
+.section-card li {
+  margin-bottom: 5px; 
+}
+
+.section-card h2, 
+.section-card h3 {
+  margin-top: 0;
+  color: #006400; 
+}
+
