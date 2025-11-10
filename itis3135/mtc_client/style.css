@@ -2,14 +2,14 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  background-color: #f9f9f9; /* light background */
-  color: #000; /* black text */
+  background-color: #f9f9f9; 
+  color: #000; 
 }
 
 /* Header */
 header {
-  background-color: #006400; /* dark green */
-  color: #FFD700; /* gold/yellow */
+  background-color: #006400; 
+  color: #FFD700;
   text-align: center;
   padding: 1.5rem 0;
 }
@@ -20,7 +20,7 @@ header {
   padding: 0;
   display: flex;
   justify-content: center;
-  background-color: #228B22; /* forest green */
+  background-color: #228B22; 
   margin: 0;
 }
 
@@ -29,7 +29,7 @@ header {
 }
 
 .navbar a {
-  color: #FFD700; /* gold */
+  color: #FFD700; 
   text-decoration: none;
   padding: 10px 15px;
   font-weight: bold;
@@ -37,8 +37,8 @@ header {
 
 .active,
 .navbar a:hover {
-  background-color: #000; /* black on hover or active */
-  color: #FFD700; /* gold text remains */
+  background-color: #000; 
+  color: #FFD700; 
   border-radius: 5px;
 }
 
@@ -58,14 +58,14 @@ main {
 
 /* Section Headings */
 h2, h3 {
-  color: #006400; /* dark green headings */
+  color: #006400; 
 }
 
 /* Footer */
 footer {
   text-align: center;
-  background-color: #000; /* black footer */
-  color: #FFD700; /* gold text */
+  background-color: #000; 
+  color: #FFD700; 
   padding: 1rem 0;
 }
 
@@ -79,20 +79,20 @@ form {
 
 form label {
   margin-top: 10px;
-  color: #006400; /* dark green labels */
+  color: #006400; 
 }
 
 form input, form textarea {
   padding: 8px;
   margin-top: 5px;
-  border: 1px solid #006400; /* dark green border */
+  border: 1px solid #006400; 
   border-radius: 5px;
 }
 
 button {
   margin-top: 15px;
-  background-color: #228B22; /* forest green button */
-  color: #FFD700; /* gold text */
+  background-color: #228B22; 
+  color: #FFD700;
   padding: 10px;
   border: none;
   cursor: pointer;
@@ -100,5 +100,10 @@ button {
 }
 
 button:hover {
-  background-color: #006400; /* darker green on hover */
+  background-color: #006400; 
+.logo-img {
+  width: 150px;  
+  height: auto;   
+  display: block; 
+  margin: 0 auto; 
 }
