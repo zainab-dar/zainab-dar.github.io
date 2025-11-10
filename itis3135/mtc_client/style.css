@@ -98,7 +98,7 @@ button:hover {
   background-color: #006400; 
 }
 .logo-img {
-  width: 150px;  
+  width: 450px;  
   height: auto;   
   display: block; 
   margin: 0 auto; 
@@ -131,10 +131,6 @@ h2, h3 {
   margin-top: 0;
   color: #006400; 
 }
-
-.circle-logo-img-link img {
-  float: left; 
-  margin-right: 15px;
-  width: 300px;      
-  max-width: 100%;
+.circle-logo-img{
+  width: 250px;
 }
