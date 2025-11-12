@@ -82,7 +82,6 @@ h2 {
   font-style: italic;
 }
 
-/* Links */
 a {
   color: white;
   text-decoration: none;
@@ -92,7 +91,6 @@ a:hover {
   color: #ddd;
 }
 
-/* Figure/Image */
 figure {
   text-align: center;
   margin: 20px auto;
@@ -105,7 +103,6 @@ figure img {
   border-radius: 8px;
 }
 
-/* Footer */
 footer {
   background-color: #5a3e2b;
   color: #f4f4f4;
@@ -140,7 +137,6 @@ footer p {
   display: block;
 }
 
-/* Validation Buttons */
 .validation-buttons {
   margin-top: 1rem;
 }
@@ -153,21 +149,18 @@ footer p {
 }
 
 
-/* Laptop / Desktop Screens */
 @media screen and (min-width: 981px) and (max-width: 1400px) {
   main {
     width: 85%; /* slightly narrower */
   }
 }
 
-/* Tablet Screens */
 @media screen and (min-width: 601px) and (max-width: 980px) {
   main {
     width: 95%; 
   }
 }
 
-/* Mobile Screens */
 @media screen and (max-width: 600px) {
   main {
     width: 98%;  
@@ -210,7 +203,6 @@ th {
     font-weight: 600;
 }
 
-/* Table Cells */
 td {
     padding: 1rem;
     border-bottom: 1px solid #e5e5e5;
@@ -218,18 +210,15 @@ td {
     line-height: 1.6;
 }
 
-/* Alternating Row Colors for Readability */
 tbody tr:nth-child(even) {
     background-color: #f9fdfd;
 }
 
-/* Hover Effect for Interactivity */
 tbody tr:hover {
     background-color: #e0f7fa;
     transition: background-color 0.3s ease;
 }
 
-/* Add Cute Rounded Corners for the First/Last Cells */
 table tr:first-child th:first-child {
     border-top-left-radius: 10px;
 }
@@ -243,7 +232,6 @@ table tr:last-child td:last-child {
     border-bottom-right-radius: 10px;
 }
 
-/* Schedule Section Styling */
 .schedule {
     background-color: #f0fcff;
     border: 2px solid #b2ebf2;
