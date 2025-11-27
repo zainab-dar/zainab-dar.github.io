@@ -7,15 +7,6 @@
   <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
 
   <style>
-    section {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  section.active {
-    opacity: 1;
-  }
-
     :root {
       --bg: #fff6f0;
       --accent: #b3472a;
@@ -211,29 +202,6 @@
       header { flex-direction: column; align-items: flex-start; }
       .nav-divider { display: none; }
     }
-    to-top{
-    position:fixed; 
-    bottom:25px; 
-    right:25px;
-    padding:10px 15px; 
-    border:none;
-    background:var(--accent-light); 
-    color:white;
-    border-radius:50%; 
-    font-size:1.3rem;
-    cursor:pointer; 
-    display:none; 
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
-    }
-    .dark {
-    --bg: #1f1f1f;
-    --card: #2b2b2b;
-    --text: #f4f4f4;
-    --accent: #ffb28a;
-    --accent-light: #d9865d;
-    background: linear-gradient(180deg, #2b2b2b, #1f1f1f);
-  }
-
   </style>
 </head>
 
@@ -244,7 +212,6 @@
         <div class="logo" aria-hidden="true">🧁</div>
         <h1>Making Cakes</h1>
       </div>
-      <button id="themeToggle" class="nav-link">Toggle Theme 🌙</button>
 
       <nav aria-label="Primary">
         <button class="nav-link" data-target="what" aria-current="true">What</button>
@@ -475,9 +442,5 @@
       });
     });
   </script>
-  <div id="lightbox">
-</div>
-<button id="toTop"></button>
-
 </body>
 </html>
