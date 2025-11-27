@@ -27,22 +27,28 @@
     <section class="section-card">
       <h2>Our Mission</h2>
       <p>The Muslim Technology Collaborative empowers Muslim students to explore technology through collaboration, mentorship, and community engagement.</p>
-      <img src="images/mtc_photo2.jpeg" alt="mtc about photo" class="logo-img">
+    <img src="images/mtc_photo2.jpeg" alt="mtc about photo" class="logo-img" id="missionImg">
+    <p id="imgCaption" class="caption" style="display: none;">Building community through technology.</p>
 
     </section>
 
     <section class="section-card">
-      <h2>Leadership</h2>
-      <ul>
-        <li>President: Student A</li>
-        <li>VP: Student B</li>
-        <li>Secretary: Student C</li>
-      </ul>
-    </section>
+    <h2>Leadership</h2>
+    <button id="toggleLeadership">Show Leadership</button>
+    <ul id="leadershipList" style="display: none;">
+      <li>President: Student A</li>
+      <li>VP: Student B</li>
+      <li>Secretary: Student C</li>
+    </ul>
+  </section>
+
   </main>
+  <button id="backToTop">↑ Top</button>
 
   <footer>
     <p>&copy; 2025 Muslim Technology Collaborative | UNC Charlotte</p>
   </footer>
+  <script src="about.js"></script>
+
 </body>
 </html>

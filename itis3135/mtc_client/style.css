@@ -134,3 +134,26 @@ h2, h3 {
 .circle-logo-img{
   width: 250px;
 }
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: #1b473e;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Caption hover */
+.caption {
+  font-size: 0.9rem;
+  text-align: center;
+  color: #333;
+  margin-top: 8px;
+  transition: opacity 0.3s ease;
+}
