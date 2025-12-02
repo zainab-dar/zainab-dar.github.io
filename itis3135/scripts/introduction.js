@@ -6,22 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const coursesContainer = document.getElementById("coursesContainer");
   const generateJsonBtn = document.getElementById("generateJsonBtn");
 
-  // ------------------------------------------
-  // CONFIRM SUBMISSION POPUP
-  // ------------------------------------------
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     if (confirm("Are you sure you want to submit this form?")) {
       alert("Your form has been submitted!");
-      // If you want actual submission to a server, uncomment:
-      // form.submit();
+     form.submit();
     }
   });
 
-  // ------------------------------------------
-  // ADD COURSE
-  // ------------------------------------------
   addCourseBtn.addEventListener("click", () => {
     const courseDiv = document.createElement("div");
     courseDiv.classList.add("course");
@@ -39,21 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ------------------------------------------
-  // CLEAR BUTTON
-  // ------------------------------------------
   clearBtn.addEventListener("click", () => {
     form.reset();
     output.innerHTML = "";
   });
 
-  // ------------------------------------------
-  // GENERATE JSON BUTTON
-  // ------------------------------------------
   generateJsonBtn.addEventListener("click", () => {
     const jsonData = {};
 
-    // Basic fields
     jsonData.firstName = document.getElementById("firstName").value;
     jsonData.middleName = document.getElementById("middleName").value;
     jsonData.nickname = document.getElementById("nickname").value;
@@ -67,13 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
     jsonData.quote = document.getElementById("quote").value;
     jsonData.quoteAuthor = document.getElementById("quoteAuthor").value;
 
-    // Picture filename
     const pictureInput = document.getElementById("picture");
     jsonData.picture = pictureInput.files[0]
       ? pictureInput.files[0].name
       : "default.jpg";
 
-    // Courses
     jsonData.courses = [];
     document.querySelectorAll(".course").forEach((courseDiv) => {
       const fields = courseDiv.querySelectorAll("input");
@@ -84,8 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
         reason: fields[3].value,
       });
     });
-
-    // Output JSON
     output.innerHTML = `<pre>${JSON.stringify(jsonData, null, 2)}</pre>`;
   });
 
