@@ -2,13 +2,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("intro-form");
   const output = document.getElementById("result-container");
   const clearBtn = document.getElementById("clear");
-  const addCourseBtn = document.getElementById("add-course-btn");
-  const coursesContainer = document.getElementById("courses-container");
+  const addCourseBtn = document.getElementById("addCourseBtn");
+  const coursesContainer = document.getElementById("coursesContainer");
+  const generateJsonBtn = document.getElementById("generateJsonBtn");
 
-  form.addEventListener("submit", function (e) {
+  // ------------------------------------------
+  // CONFIRM SUBMISSION POPUP
+  // ------------------------------------------
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
+
+    if (confirm("Are you sure you want to submit this form?")) {
+      alert("Your form has been submitted!");
+      // If you want actual submission to a server, uncomment:
+      // form.submit();
+    }
   });
 
+  // ------------------------------------------
+  // ADD COURSE
+  // ------------------------------------------
   addCourseBtn.addEventListener("click", () => {
     const courseDiv = document.createElement("div");
     courseDiv.classList.add("course");
@@ -26,74 +39,54 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ------------------------------------------
+  // CLEAR BUTTON
+  // ------------------------------------------
   clearBtn.addEventListener("click", () => {
     form.reset();
-    const inputs = form.querySelectorAll("input, textarea");
-    inputs.forEach((input) => (input.value = ""));
+    output.innerHTML = "";
   });
 
-  function generateIntroPage() {
-    const firstName = document.getElementById("firstName").value;
-    const middleName = document.getElementById("middleName").value;
-    const nickname = document.getElementById("nickname").value;
-    const lastName = document.getElementById("lastName").value;
-    const mascotAdj = document.getElementById("mascotAdj").value;
-    const mascotAnimal = document.getElementById("mascotAnimal").value;
-    const divider = document.getElementById("divider").value;
-    const caption = document.getElementById("caption").value;
-    const personalStatement = document.getElementById("personalStatement").value;
-    const quote = document.getElementById("quote").value;
-    const quoteAuthor = document.getElementById("quoteAuthor").value;
+  // ------------------------------------------
+  // GENERATE JSON BUTTON
+  // ------------------------------------------
+  generateJsonBtn.addEventListener("click", () => {
+    const jsonData = {};
 
+    // Basic fields
+    jsonData.firstName = document.getElementById("firstName").value;
+    jsonData.middleName = document.getElementById("middleName").value;
+    jsonData.nickname = document.getElementById("nickname").value;
+    jsonData.lastName = document.getElementById("lastName").value;
+    jsonData.mascotAdj = document.getElementById("mascotAdj").value;
+    jsonData.mascotAnimal = document.getElementById("mascotAnimal").value;
+    jsonData.divider = document.getElementById("divider").value;
+
+    jsonData.caption = document.getElementById("caption").value;
+    jsonData.personalStatement = document.getElementById("personalStatement").value;
+    jsonData.quote = document.getElementById("quote").value;
+    jsonData.quoteAuthor = document.getElementById("quoteAuthor").value;
+
+    // Picture filename
     const pictureInput = document.getElementById("picture");
-    let imageSrc = "images/default.jpg";
-    if (pictureInput.files && pictureInput.files[0]) {
-      imageSrc = URL.createObjectURL(pictureInput.files[0]);
-    }
+    jsonData.picture = pictureInput.files[0]
+      ? pictureInput.files[0].name
+      : "default.jpg";
 
-    const courses = [];
+    // Courses
+    jsonData.courses = [];
     document.querySelectorAll(".course").forEach((courseDiv) => {
       const fields = courseDiv.querySelectorAll("input");
-      courses.push({
+      jsonData.courses.push({
         department: fields[0].value,
         number: fields[1].value,
         name: fields[2].value,
-        reason: fields[3].value
+        reason: fields[3].value,
       });
     });
 
-    const coursesHTML = courses
-      .map(
-        (c) =>
-          `<li>${c.department} ${c.number}: ${c.name} — <em>${c.reason}</em></li>`
-      )
-      .join("");
+    // Output JSON
+    output.innerHTML = `<pre>${JSON.stringify(jsonData, null, 2)}</pre>`;
+  });
 
-    output.innerHTML = `
-      <section class="intro-result">
-        <h2>${firstName} ${middleName ? middleName + " " : ""}${lastName}'s Introduction</h2>
-        <h3>${mascotAdj} ${mascotAnimal}</h3>
-        <hr>
-        <p>${personalStatement}</p>
-        <figure>
-          <img src="${imageSrc}" alt="Profile Picture">
-          <figcaption>${caption}</figcaption>
-        </figure>
-        <h4>Courses I'm Taking:</h4>
-        <ul>${coursesHTML}</ul>
-        <blockquote>"${quote}" — ${quoteAuthor}</blockquote>
-        <button id="reset-form-btn">Start Over</button>
-      </section>
-    `;
-
-    form.style.display = "none";
-
-    document
-      .getElementById("reset-form-btn")
-      .addEventListener("click", function () {
-        form.reset();
-        form.style.display = "block";
-        output.innerHTML = "";
-      });
-  }
 });
