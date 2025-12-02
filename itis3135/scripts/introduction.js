@@ -31,44 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
       courseDiv.remove();
     });
   });
-
   clearBtn.addEventListener("click", () => {
     form.reset();
     output.innerHTML = "";
-  });
-
-  generateJsonBtn.addEventListener("click", () => {
-    const jsonData = {};
-
-    jsonData.firstName = document.getElementById("firstName").value;
-    jsonData.middleName = document.getElementById("middleName").value;
-    jsonData.nickname = document.getElementById("nickname").value;
-    jsonData.lastName = document.getElementById("lastName").value;
-    jsonData.mascotAdj = document.getElementById("mascotAdj").value;
-    jsonData.mascotAnimal = document.getElementById("mascotAnimal").value;
-    jsonData.divider = document.getElementById("divider").value;
-
-    jsonData.caption = document.getElementById("caption").value;
-    jsonData.personalStatement = document.getElementById("personalStatement").value;
-    jsonData.quote = document.getElementById("quote").value;
-    jsonData.quoteAuthor = document.getElementById("quoteAuthor").value;
-
-    const pictureInput = document.getElementById("picture");
-    jsonData.picture = pictureInput.files[0]
-      ? pictureInput.files[0].name
-      : "default.jpg";
-
-    jsonData.courses = [];
-    document.querySelectorAll(".course").forEach((courseDiv) => {
-      const fields = courseDiv.querySelectorAll("input");
-      jsonData.courses.push({
-        department: fields[0].value,
-        number: fields[1].value,
-        name: fields[2].value,
-        reason: fields[3].value,
-      });
-    });
-    output.innerHTML = `<pre>${JSON.stringify(jsonData, null, 2)}</pre>`;
   });
 
 });

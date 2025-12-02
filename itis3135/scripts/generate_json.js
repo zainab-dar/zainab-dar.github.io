@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.courseScriptLoaded) return;
   window.courseScriptLoaded = true;
 
+  // ---------------------------------------------------
+  // ADD COURSE
+  // ---------------------------------------------------
   addCourseBtn.addEventListener("click", () => {
     const courseDiv = document.createElement("div");
     courseDiv.classList.add("course");
@@ -27,7 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  
   generateBtn.addEventListener("click", () => {
+
+    const pictureInput = document.getElementById("picture");
+
     const data = {
       firstName: document.getElementById("firstName").value,
       preferredName: document.getElementById("nickname").value,
@@ -36,19 +43,21 @@ document.addEventListener("DOMContentLoaded", () => {
       divider: document.getElementById("divider").value,
       mascotAdjective: document.getElementById("mascotAdj").value,
       mascotAnimal: document.getElementById("mascotAnimal").value,
-      image: document.getElementById("picture").value || "images/placeholder.jpg",
+
+      image: pictureInput.files[0]
+        ? pictureInput.files[0].name
+        : "images/placeholder.jpg",
+
       imageCaption: document.getElementById("caption").value,
       personalStatement: document.getElementById("personalStatement").value,
-      personalBackground: document.getElementById("personalBackground").value,
-      professionalBackground: document.getElementById("professionalBackground").value,
-      academicBackground: document.getElementById("academicBackground").value,
-      subjectBackground: document.getElementById("subjectBackground").value,
-      primaryComputer: document.getElementById("primaryComputer").value,
-      courses: [],
+
       quote: document.getElementById("quote").value,
-      quoteAuthor: document.getElementById("quoteAuthor").value
+      quoteAuthor: document.getElementById("quoteAuthor").value,
+
+      courses: []
     };
 
+    // Collect all courses
     document.querySelectorAll(".course").forEach((course) => {
       const inputs = course.querySelectorAll("input");
       if (inputs.length >= 4) {
