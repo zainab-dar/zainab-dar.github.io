@@ -441,6 +441,41 @@
         });
       });
     });
+     document.addEventListener('DOMContentLoaded', () => {
+      const navLinks = document.querySelectorAll(".nav-link");
+      const sections = document.querySelectorAll("section");
+
+      function makeSprinkles() {
+        const colors = ["#ff8fa3", "#ffd166", "#a8dadc", "#bde0fe", "#e5989b", "#ffc8dd"];
+
+        for (let i = 0; i < 40; i++) {
+          const s = document.createElement("div");
+          s.classList.add("sprinkle");
+
+          s.style.left = Math.random() * 100 + "vw";
+          s.style.background = colors[Math.floor(Math.random() * colors.length)];
+          s.style.animationDuration = (1.5 + Math.random() * 1) + "s";
+          s.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+          document.body.appendChild(s);
+
+          setTimeout(() => s.remove(), 2500);
+        }
+      }
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          sections.forEach((section) => section.classList.remove("active"));
+          navLinks.forEach((btn) => btn.removeAttribute("aria-current"));
+
+          const target = link.getAttribute("data-target");
+          document.getElementById(target).classList.add("active");
+          link.setAttribute("aria-current", "true");
+
+          makeSprinkles();
+        });
+      });
+    });
   </script>
 </body>
 </html>
