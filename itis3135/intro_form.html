@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-  <script>hljs.highlightAll();</script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Introduction Form</title>
+
+  <!-- Highlight.js styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  
+  <!-- Local CSS -->
   <link rel="stylesheet" href="styles/default.css">
+
+  <!-- Scripts -->
   <script src="scripts/introduction.js" defer></script>
   <script src="scripts/generate_json.js" defer></script>
   <script src="scripts/generate_html.js" defer></script>
-  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" defer></script>
+  <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
@@ -24,6 +27,7 @@
     <h3>Please submit the form below.</h3>
 
     <form id="intro-form">
+      <!-- Basic Info -->
       <fieldset>
         <legend>Basic Info</legend>
         <label for="firstName">First Name:</label>
@@ -39,6 +43,7 @@
         <input type="text" id="lastName" name="lastName" value="Dar" required><br>
       </fieldset>
 
+      <!-- Mascot Info -->
       <fieldset>
         <legend>Mascot Info</legend>
         <label for="mascotAdj">Mascot Adjective:</label>
@@ -51,6 +56,7 @@
         <input type="text" id="divider" name="divider" value="|" required>
       </fieldset>
 
+      <!-- Image -->
       <fieldset>
         <legend>Image</legend>
         <label for="picture">Upload Picture:</label>
@@ -66,17 +72,17 @@
         <textarea id="personalStatement" name="personalStatement" required>Hi, I'm Zainab...</textarea>
       </fieldset>
 
-    <fieldset id="coursesContainer">
-    <legend>Courses</legend>
-    <div class="course">
-      <input type="text" placeholder="Department (e.g., ITIS)" required>
-      <input type="text" placeholder="Course Number (e.g., 3135)" required>
-      <input type="text" placeholder="Course Name" required>
-      <input type="text" placeholder="Reason for Taking" required>
-      <button type="button" class="deleteCourse">Delete</button>
-    </div>
-    <button type="button" id="addCourseBtn">Add Course</button>
-    </fieldset>
+      <fieldset id="coursesContainer">
+        <legend>Courses</legend>
+        <div class="course">
+          <input type="text" placeholder="Department (e.g., ITIS)" required>
+          <input type="text" placeholder="Course Number (e.g., 3135)" required>
+          <input type="text" placeholder="Course Name" required>
+          <input type="text" placeholder="Reason for Taking" required>
+          <button type="button" class="deleteCourse">Delete</button>
+        </div>
+        <button type="button" id="addCourseBtn">Add Course</button>
+      </fieldset>
 
       <fieldset>
         <legend>Quote</legend>
@@ -98,8 +104,9 @@
 
     <div id="result-container"></div>
   </main>
+
   <footer id="footer"></footer>
 
+  <script>hljs.highlightAll();</script>
 </body>
-
 </html>
