@@ -1,132 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-  <style>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f5f1;
+  color: #3e2f24;
+}
 
-    body {
-      font-family: "Poppins", sans-serif;
-      background-color: #fdf8f5;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      color: #2b2b2b;
-    }
+/* Header */
+header {
+  background-color: #6b4f3a;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
 
-    header {
-      background: #2b2b2b;
-      color: #ffffff;
-      text-align: center;
-      padding: 60px 20px 50px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
 
-    h1 {
-      font-size: 2.8em;
-      margin: 0;
-      letter-spacing: 1px;
-      font-weight: 700;
-      color:  hsl(339, 67%, 91%);
-    }
+header nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 12px;
+  position: relative;
+}
 
-    h2 {
-      color:  hsl(339, 44%, 72%);
-      text-align: center;
-      font-size: 1.8em;
-      margin: 40px 0 20px;
-      font-weight: 600;
-    }
+/* Add dividers in header */
+header nav a:not(:last-child)::after {
+  content: "|";
+  color: white;
+  margin-left: 12px;
+}
 
-    #content-wrapper {
-      background-color: #ffffff;
-      max-width: 800px;
-      width: 90%;
-      margin: 0 auto 60px;
-      padding: 40px 50px;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      line-height: 1.8;
-    }
+.secondary-nav {
+  margin: 15px;
+}
 
-    p {
-      font-size: 17px;
-      margin: 1.5em 0;
-      color: #2b2b2b;
-    }
+h3 a {
+  color: #222;       
+  text-decoration: none;
+}
 
-    strong {
-      color: #6b5b59;
-    }
+h3 a:hover {
+  color: #0066cc;    
+  text-decoration: underline;
+}
 
-    a {
-      color: #e3b7a0;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
+/* Main Content */
+main {
+  margin: 0 auto;            
+  width: 90%;               
+  max-width: 1200px;        
+  background-color: #fdfcfb;
+  border-radius: 20px;      
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);  
+}
 
-    a:hover {
-      color:  hsl(339, 44%, 72%);
-      text-decoration: underline;
-    }
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  text-align: center;
+}
 
-    /* FOOTER */
-    footer {
-      background-color: #2b2b2b;
-      color: #fdf8f5;
-      padding: 25px 0;
-      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
-    }
+h2 {
+  color: #6b4f3a;
+  font-size: 1.5rem;
+  text-align: center;
 
-    .footer-nav nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
+}
 
-    .footer-nav a {
-      color: #fdf8f5;
-      font-weight: 500;
-      font-size: 16px;
-      position: relative;
-      padding: 0 8px;
-    }
+.tagline {
+  font-style: italic;
+  color: beige;
+}
 
-    .footer-nav a:not(:last-child)::after {
-      content: "|";
-      color: rgba(255, 255, 255, 0.6);
-      margin-left: 14px;
-    }
+.italic-text {
+  font-style: italic;
+}
 
-    /* HOVER EFFECT ON FOOTER LINKS */
-    .footer-nav a:hover {
-      color: hsl(339, 44%, 72%);
-    }
+a {
+  color: white;
+  text-decoration: none;
+}
 
-    /* RESPONSIVE */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2.2em;
-      }
+a:hover {
+  color: #ddd;
+}
 
-      #content-wrapper {
-        padding: 25px;
-      }
+figure {
+  text-align: center;
+  margin: 20px auto;
+}
 
-      p {
-        font-size: 16px;
-      }
+figure img {
+  max-width: 300px;
+  height: auto;
+  width: 40%;
+  border-radius: 8px;
+}
 
-      .footer-nav a {
-        font-size: 15px;
-      }
-    }
-  </style>
-  <head>
+footer {
+  background-color: #5a3e2b;
+  color: #f4f4f4;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.footer-nav nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0 12px;
+  position: relative;
+}
+
+.footer-nav a:not(:last-child)::after {
+  content: "|";
+  color: white;
+  margin-left: 12px;
+}
+
+footer p {
+  margin-top: 1rem;
+  display: block;
+}
+
+.validation-buttons {
+  margin-top: 1rem;
+}
+
+.validation-buttons img {
+  border: 0;
+  width: 88px;
+  height: 31px;
+  margin: 0 5px;
+}
+
+
+@media screen and (min-width: 981px) and (max-width: 1400px) {
+  main {
+    width: 85%; /* slightly narrower */
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 980px) {
+  main {
+    width: 95%; 
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    width: 98%;  
+  }
+}
+
+main {
+  max-width: 1200px;   
+  margin: 0 auto;      
+  padding: 2rem;       
+}
+
+section {
+  margin-bottom: 2rem; 
+}
+
+p, ul {
+  margin-bottom: 1rem;
+  line-height: 1.6;    
+}
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 2rem 0;
+    font-size: 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Header */
+th {
+    background-color: brown; /* Dolphin teal accent */
+    color: white;
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 3px solid beige;
+    font-weight: 600;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #e5e5e5;
+    vertical-align: top;
+    line-height: 1.6;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9fdfd;
+}
+
+tbody tr:hover {
+    background-color: #e0f7fa;
+    transition: background-color 0.3s ease;
+}
+
+table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+}
+table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+}
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.schedule {
+    background-color: #f0fcff;
+    border: 2px solid #b2ebf2;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    box-shadow: 0 1px 4px rgba(0, 128, 128, 0.1);
+}
+
+.schedule {
+    color: #006666;
+    margin-bottom: 0.75rem;
+}
+
+.schedule ul li {
+    margin-bottom: 0.5rem;
+}
+.footer-credit {
+  margin-top: 15px;
+}
+
+.footer-credit a {
+  text-decoration: none;
+  color: white; /* soft highlight color */
+  font-size: 1.3em; /* increased size */
+  font-weight: bold;
+}
+</style>
+ <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zen Dolphin || ITIS 3135 || Work Samples</title>
