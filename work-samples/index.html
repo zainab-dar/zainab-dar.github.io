@@ -1,6 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <style>
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #fdf8f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      color: #2b2b2b;
+    }
+
+    header {
+      background: #2b2b2b;
+      color: #ffffff;
+      text-align: center;
+      padding: 60px 20px 50px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 2.8em;
+      margin: 0;
+      letter-spacing: 1px;
+      font-weight: 700;
+      color:  hsl(339, 67%, 91%);
+    }
+
+    h2 {
+      color:  hsl(339, 44%, 72%);
+      text-align: center;
+      font-size: 1.8em;
+      margin: 40px 0 20px;
+      font-weight: 600;
+    }
+
+    #content-wrapper {
+      background-color: #ffffff;
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto 60px;
+      padding: 40px 50px;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      line-height: 1.8;
+    }
+
+    p {
+      font-size: 17px;
+      margin: 1.5em 0;
+      color: #2b2b2b;
+    }
+
+    strong {
+      color: #6b5b59;
+    }
+
+    a {
+      color: #e3b7a0;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color:  hsl(339, 44%, 72%);
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #2b2b2b;
+      color: #fdf8f5;
+      padding: 25px 0;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .footer-nav nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .footer-nav a {
+      color: #fdf8f5;
+      font-weight: 500;
+      font-size: 16px;
+      position: relative;
+      padding: 0 8px;
+    }
+
+    .footer-nav a:not(:last-child)::after {
+      content: "|";
+      color: rgba(255, 255, 255, 0.6);
+      margin-left: 14px;
+    }
+
+    /* HOVER EFFECT ON FOOTER LINKS */
+    .footer-nav a:hover {
+      color: hsl(339, 44%, 72%);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.2em;
+      }
+
+      #content-wrapper {
+        padding: 25px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .footer-nav a {
+        font-size: 15px;
+      }
+    }
+  </style>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zen Dolphin || ITIS 3135 || Work Samples</title>
